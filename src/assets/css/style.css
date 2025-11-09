@@ -1,0 +1,1503 @@
+#Nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+#Nav.scrolled {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  animation: fadeDown 0.3s ease;
+}
+#Nav .NavMain {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 15px 0;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  #Nav .NavMain {
+    width: 100%;
+  }
+}
+#Nav .NavMain .NavLogo {
+  width: 60px;
+  height: 60px;
+}
+#Nav .NavMain .NavLogo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#Nav .NavMain .NavLink ul {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#Nav .NavMain .NavLink ul li {
+  font-size: 16px;
+  color: #fff;
+  font-family: myFont1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  position: relative;
+  letter-spacing: 1px;
+}
+#Nav .NavMain .NavLink ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--primaryColor);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+#Nav .NavMain .NavLink ul li:hover {
+  color: var(--primaryColor);
+}
+#Nav .NavMain .NavLink ul li:hover::after {
+  width: 100%;
+}
+#Nav .NavMain .NavLink ul li.active {
+  color: var(--primaryColor);
+}
+#Nav .NavMain .NavLink ul li.active::after {
+  width: 80%;
+  background: var(--primaryColor);
+}
+@media (max-width: 1024px) {
+  #Nav .NavMain .NavLink {
+    display: none;
+  }
+}
+#Nav .NavMain .NavContact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Nav .NavMain .NavContact p {
+  font-size: 16px;
+  color: #fff;
+  font-family: myFont1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  letter-spacing: 1px;
+}
+#Nav .NavMain .NavContact svg {
+  color: #fff;
+  display: none;
+}
+@media (max-width: 1024px) {
+  #Nav .NavMain .NavContact svg {
+    display: block;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#Sidenav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  transition: right 0.4s ease-in-out;
+  z-index: 2000;
+}
+#Sidenav.open {
+  right: 0;
+}
+#Sidenav .SidenavContent {
+  position: relative;
+  height: 100%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+#Sidenav .SidenavContent .closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#Sidenav .SidenavContent .closeIcon:hover {
+  transform: rotate(90deg) scale(1.1);
+  color: var(--primaryColor);
+}
+#Sidenav .SidenavContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#Sidenav .SidenavContent ul li {
+  font-size: 64px;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+#Sidenav .SidenavContent ul li:hover {
+  color: var(--primaryColor);
+}
+
+#HomeBanner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#HomeBanner .BannerMain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#HomeBanner .BannerMain .BannerVideo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#HomeBanner .BannerMain .BannerOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+#HomeBanner .BannerMain .SideNav {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+#HomeBanner .BannerMain .SideNav .NavInner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#HomeBanner .BannerMain .SideNav .NavText {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: myFont1;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+#HomeBanner .BannerMain .SideNav .NavText:hover {
+  opacity: 1;
+}
+#HomeBanner .BannerMain .SideNav.leftNav {
+  left: 0;
+  border-right: 1px solid rgba(238, 238, 238, 0.3);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+#HomeBanner .BannerMain .SideNav.rightNav {
+  right: 0;
+  border-left: 1px solid rgba(238, 238, 238, 0.3);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+@media (max-width: 1024px) {
+  #HomeBanner .BannerMain .SideNav {
+    display: none;
+  }
+}
+#HomeBanner .BannerMain .BannerContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #fff;
+  padding: 20px;
+  max-width: 70%;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 1024px) {
+  #HomeBanner .BannerMain .BannerContent {
+    padding: 20px 0px;
+    max-width: 90%;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 1024px) {
+  #HomeBanner .BannerMain .BannerContent {
+    margin-top: 0px;
+  }
+}
+#HomeBanner .BannerMain .BannerContent .SlideCounter {
+  margin-bottom: 30px;
+}
+@media (max-width: 1024px) {
+  #HomeBanner .BannerMain .BannerContent .SlideCounter {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 1024px) {
+  #HomeBanner .BannerMain .BannerContent .SlideCounter {
+    margin-bottom: 30px;
+  }
+}
+#HomeBanner .BannerMain .BannerContent .SlideCounter .CurrentSlide {
+  font-family: myFont1;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+#HomeBanner .BannerMain .BannerContent .SlideCounter .TotalSlides {
+  font-family: myFont1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #eee;
+}
+#HomeBanner .BannerMain .BannerContent .BannerTitle {
+  font-family: myFont1;
+  font-size: 85px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  #HomeBanner .BannerMain .BannerContent .BannerTitle {
+    font-size: 64px;
+  }
+}
+@media (max-width: 480px) {
+  #HomeBanner .BannerMain .BannerContent .BannerTitle {
+    font-size: 42px;
+  }
+}
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 40px;
+}
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p, #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p {
+  font-family: myFont1;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p .fixed-color, #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .fixed-color {
+  color: #fff;
+}
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p .change-color, #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .change-color {
+  color: #d5d5d5;
+}
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .fixed-color {
+  color: #d5d5d5;
+}
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .change-color {
+  color: #fff;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .ContactBox .lets-talk {
+  font-family: myFont1;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .ContactBox .lets-talk .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primaryColor);
+  transition: width 0.5s ease;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .ContactBox .lets-talk:hover {
+  color: var(--primaryColor);
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .ContactBox .lets-talk:hover .underline {
+  width: 100%;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox {
+  display: flex;
+  gap: 20px;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a {
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a:hover {
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+#HomeBanner .BannerMain .BannerContent .SlideArrows {
+  display: none;
+}
+@media (max-width: 1024px) {
+  #HomeBanner .BannerMain .BannerContent .SlideArrows {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  #HomeBanner .BannerMain .BannerContent .SlideArrows .Arrows {
+    display: flex;
+    align-items: center;
+  }
+  #HomeBanner .BannerMain .BannerContent .SlideArrows .Arrows .ArrowBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  #HomeBanner .BannerMain .BannerContent .SlideArrows .Arrows .ArrowBtn svg {
+    font-size: 30px;
+    transition: color 0.3s ease;
+  }
+  #HomeBanner .BannerMain .BannerContent .SlideArrows .Arrows .ArrowBtn:hover {
+    color: var(--primaryColor);
+  }
+  #HomeBanner .BannerMain .BannerContent .SlideArrows .Arrows svg {
+    font-size: 30px;
+  }
+}
+
+#HomeAbout {
+  padding: 100px 0;
+  width: 100%;
+  /* Fade-right animation (for Section 1 right side) */
+  /* Fade-left animation (for Section 2 left side) */
+}
+@media (max-width: 1024px) {
+  #HomeAbout {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 768px) {
+  #HomeAbout {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 480px) {
+  #HomeAbout {
+    padding: 30px 0;
+  }
+}
+#HomeAbout .HomeAboutHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#HomeAbout .HomeAboutHead h2 {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: myFont1;
+  color: #fff;
+}
+@media (max-width: 1024px) {
+  #HomeAbout .HomeAboutHead h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  #HomeAbout .HomeAboutHead h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  #HomeAbout .HomeAboutHead h2 {
+    font-size: 30px;
+  }
+}
+#HomeAbout .HomeAboutMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* Section 1 specific layout */
+  /* Section 2 specific layout */
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+@media (max-width: 1024px) {
+  #HomeAbout .HomeAboutMain .HomeAboutSection {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  #HomeAbout .HomeAboutMain .HomeAboutSection {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  #HomeAbout .HomeAboutMain .HomeAboutSection {
+    flex-direction: column;
+  }
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutLeft .HomeAboutImg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutLeft .HomeAboutImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutLeft p {
+  font-size: 16px;
+  font-family: myFont1;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #fff;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutRight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutRight .HomeAboutImg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutRight .HomeAboutImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection .HomeAboutRight p {
+  font-size: 16px;
+  font-family: myFont1;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #fff;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection1 {
+  border-bottom: 1px solid #fff;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection1 .HomeAboutLeft {
+  flex: 0 0 35%;
+  border-right: 1px solid #eee;
+  padding-right: 20px;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection1 .HomeAboutRight {
+  flex: 0 0 65%;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection2 .HomeAboutLeft {
+  flex: 0 0 65%;
+}
+#HomeAbout .HomeAboutMain .HomeAboutSection2 .HomeAboutRight {
+  flex: 0 0 35%;
+  border-left: 1px solid #eee;
+  padding-left: 20px;
+}
+#HomeAbout .fade-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease;
+}
+#HomeAbout .fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+#HomeAbout .fade-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease;
+}
+#HomeAbout .fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#HomeGallery {
+  padding: 100px 0;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  #HomeGallery {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 768px) {
+  #HomeGallery {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 480px) {
+  #HomeGallery {
+    padding: 30px 0;
+  }
+}
+#HomeGallery .HomeGalleryHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#HomeGallery .HomeGalleryHead h2 {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: myFont1;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  #HomeGallery .HomeGalleryHead h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  #HomeGallery .HomeGalleryHead h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  #HomeGallery .HomeGalleryHead h2 {
+    font-size: 30px;
+  }
+}
+#HomeGallery .HomeGalleryMain {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem {
+  width: 16.6666666667%;
+  height: 120px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem:hover .HomeGalleryImage img {
+  transform: scale(1.05);
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage .gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage .gallery-overlay .view-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--primaryColor);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage .gallery-overlay .view-icon:hover {
+  transform: scale(1.1);
+}
+
+#HomeService {
+  padding: 100px 0;
+  background: #000;
+}
+@media (max-width: 1024px) {
+  #HomeService {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 768px) {
+  #HomeService {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 480px) {
+  #HomeService {
+    padding: 30px 0;
+  }
+}
+#HomeService .HomeServiceHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#HomeService .HomeServiceHead h2 {
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: myFont1;
+}
+@media (max-width: 1024px) {
+  #HomeService .HomeServiceHead h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  #HomeService .HomeServiceHead h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  #HomeService .HomeServiceHead h2 {
+    font-size: 30px;
+  }
+}
+#HomeService .HomeServiceMain {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#HomeService .ServiceBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+  position: relative;
+}
+#HomeService .ServiceBoxLeft {
+  width: calc(100% - 320px);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-height: 80px;
+}
+@media (max-width: 1024px) {
+  #HomeService .ServiceBoxLeft {
+    width: calc(100% - 260px);
+  }
+}
+@media (max-width: 768px) {
+  #HomeService .ServiceBoxLeft {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+#HomeService .ServiceBoxLeft h2 {
+  width: 35%;
+  color: #555;
+  font-size: 36px;
+  transition: 0.3s;
+}
+#HomeService .ServiceBoxLeft p {
+  width: 60%;
+  color: #555;
+  font-size: 16px;
+  max-width: 60%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: 0.3s;
+}
+#HomeService .ServiceImgBox {
+  position: absolute;
+  right: 150px;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  background: #111;
+  z-index: 6;
+  display: none;
+}
+#HomeService .ServiceImgBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform-origin: center center;
+}
+@media (max-width: 1024px) {
+  #HomeService .ServiceImgBox {
+    width: 220px;
+    height: 220px;
+    right: -30px;
+  }
+}
+@media (min-width: 769px) {
+  #HomeService .ServiceImgBox {
+    display: block;
+  }
+}
+#HomeService .ServiceIconBox {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  transition: 0.3s;
+}
+#HomeService .ServiceIconBox .icon-hover {
+  display: none;
+}
+#HomeService .ServiceIconBox:hover {
+  background: white;
+  color: black;
+}
+#HomeService .ServiceBox:hover .icon-hover {
+  display: block;
+}
+#HomeService .ServiceBox:hover .icon-default {
+  display: none;
+}
+
+#HomeWork {
+  padding: 100px 0;
+  background: #000;
+}
+@media (max-width: 1024px) {
+  #HomeWork {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 768px) {
+  #HomeWork {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 480px) {
+  #HomeWork {
+    padding: 30px 0;
+  }
+}
+#HomeWork .HomeWorkHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#HomeWork .HomeWorkHead h2 {
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  font-family: myFont1;
+}
+@media (max-width: 1024px) {
+  #HomeWork .HomeWorkHead h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  #HomeWork .HomeWorkHead h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  #HomeWork .HomeWorkHead h2 {
+    font-size: 30px;
+  }
+}
+#HomeWork .HomeWorkMain {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+#HomeWork .HomeWorkBox {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+#HomeWork .HomeWorkBox.leftImage {
+  flex-direction: row;
+}
+#HomeWork .HomeWorkBox.rightImage {
+  flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+  #HomeWork .HomeWorkBox {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+#HomeWork .HomeWorkBox .HomeWorkImgBox {
+  width: 50%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  #HomeWork .HomeWorkBox .HomeWorkImgBox {
+    width: 100%;
+    height: 50vh;
+  }
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  #HomeWork .HomeWorkBox .HomeWorkContentBox {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent h2 {
+  font-size: 26px;
+  font-weight: 500;
+  font-family: myFont1;
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent p {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: myFont1;
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent:last-child {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent:last-child p {
+  font-size: 24px;
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .ButtonBox {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+#HomeWork .HomeWorkBox .HomeWorkContentBox .ButtonBox:hover {
+  border-color: #ff0000;
+  transform: rotate(20deg);
+}
+
+#HomeContact {
+  padding: 100px 0;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  #HomeContact {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 768px) {
+  #HomeContact {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 480px) {
+  #HomeContact {
+    padding: 30px 0;
+  }
+}
+#HomeContact .HomeContactHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#HomeContact .HomeContactHead h2 {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: myFont1;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  #HomeContact .HomeContactHead h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  #HomeContact .HomeContactHead h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  #HomeContact .HomeContactHead h2 {
+    font-size: 30px;
+  }
+}
+#HomeContact .HomeContactMain {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  #HomeContact .HomeContactMain {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  #HomeContact .HomeContactMain {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  #HomeContact .HomeContactMain {
+    flex-direction: column;
+  }
+}
+#HomeContact .HomeContactMain .HomeContactLeft {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 1024px) {
+  #HomeContact .HomeContactMain .HomeContactLeft {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #HomeContact .HomeContactMain .HomeContactLeft {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  #HomeContact .HomeContactMain .HomeContactLeft {
+    width: 100%;
+  }
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactTitle {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactTitle p {
+  font-size: 32px;
+  color: #eee;
+  font-family: myFont1;
+  font-weight: 500;
+  line-height: 1.5;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactDec {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactDec p {
+  color: #eee;
+  font-size: 16px;
+  font-family: myFont1;
+  font-weight: 500;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .Iconbox {
+  font-size: 18px;
+  color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .TextBox p {
+  color: #eee;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: myFont1;
+}
+#HomeContact .HomeContactMain .HomeContactRight {
+  width: 48%;
+}
+@media (max-width: 1024px) {
+  #HomeContact .HomeContactMain .HomeContactRight {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #HomeContact .HomeContactMain .HomeContactRight {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  #HomeContact .HomeContactMain .HomeContactRight {
+    width: 100%;
+  }
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField {
+  width: calc(50% - 10px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #797979;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField {
+    width: 100%;
+  }
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField:nth-child(5) {
+  width: 100%;
+  align-items: flex-start;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField .fieldIcon {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField input,
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField textarea {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: myFont1;
+  color: #fff;
+  padding: 10px 0;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField input::-moz-placeholder, #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField textarea::-moz-placeholder {
+  color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField input::placeholder,
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField textarea::placeholder {
+  color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField textarea {
+  min-height: 100px;
+  resize: none;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField:hover, #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField:focus-within {
+  border-color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField.error {
+  border-color: red;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField.error .errorText {
+  position: absolute;
+  bottom: -27px;
+  left: 0;
+  font-size: 13px;
+  color: red;
+  font-family: myFont1;
+  font-weight: 400;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField {
+  width: 100%;
+  align-items: flex-start;
+  border-bottom: 1px solid #797979;
+  transition: border-color 0.3s ease;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField .fieldIcon {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 12px;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField textarea {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: myFont1;
+  color: #fff;
+  padding: 10px 0;
+  resize: none;
+  min-height: 100px;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField textarea::-moz-placeholder {
+  color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField textarea::placeholder {
+  color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField:hover, #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField:focus-within {
+  border-color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn {
+  width: 100%;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button {
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button svg {
+  color: #000;
+  font-size: 20px;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button p {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: myFont1;
+  text-transform: capitalize;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button:hover {
+  background: #ddd;
+}
+#HomeContact .ContactMap {
+  width: 100%;
+  height: 450px;
+  margin-top: 50px;
+}
+#HomeContact .ContactMap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+#Footer {
+  width: 100%;
+  padding: 60px 30px;
+  background-color: #000;
+}
+#Footer .FooterMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+#Footer .FooterSection1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 40px;
+}
+#Footer .FooterSection1::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #d5d5d5;
+}
+#Footer .FooterSection1 .FooterShortTitle p {
+  font-size: 15px;
+  font-family: myFont1;
+  font-weight: 500;
+  color: #797979;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+#Footer .FooterSection1 .FooterMainTitle p {
+  font-size: 20px;
+  font-family: myFont1;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+#Footer .FooterSection1 .FooterDec {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+#Footer .FooterSection1 .FooterDec p {
+  font-size: 15px;
+  font-family: myFont1;
+  font-weight: 400;
+  color: #797979;
+  text-transform: capitalize;
+  line-height: 1.6;
+}
+#Footer .FooterSection1 .FooterContact {
+  margin-bottom: 40px;
+}
+#Footer .FooterSection1 .FooterContact button {
+  background: none;
+  border: 1px solid #797979;
+  outline: none;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#Footer .FooterSection1 .FooterContact button:hover {
+  border-color: #fff;
+}
+#Footer .FooterSection1 .FooterCopyright p {
+  font-size: 15px;
+  font-family: myFont1;
+  font-weight: 400;
+  color: #797979;
+}
+#Footer .FooterSection2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#Footer .FooterSection2 .FooterLogo {
+  width: 60px;
+  height: 60px;
+}
+#Footer .FooterSection2 .FooterLogo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#Footer .FooterSection2 .FooterSocialIcon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Footer .FooterSection2 .FooterSocialIcon a {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #d5d5d5;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+#Footer .FooterSection2 .FooterSocialIcon a:hover {
+  border-color: #fff;
+  color: var(--primaryColor);
+}
+#Footer .FooterSection2 .FooterSocialIcon a svg {
+  font-size: 16px;
+}
+
+.cursor-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cursor-text {
+  position: absolute;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cursor-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+
+.scroll-whatsapp-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10000;
+}
+.scroll-whatsapp-container button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.scroll-whatsapp-container a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.scroll-whatsapp-container .scroll-top-btn {
+  border: 1px solid #d5d5d5;
+  border-radius: 100%;
+  color: #fff;
+  background: none;
+}
+.scroll-whatsapp-container .scroll-top-btn:hover {
+  background-color: #333;
+}
+.scroll-whatsapp-container .whatsapp-btn {
+  background-color: #25d366;
+}/*# sourceMappingURL=style.css.map */
