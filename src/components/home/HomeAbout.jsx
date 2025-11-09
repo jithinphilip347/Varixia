@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React, { useEffect } from "react";
-import About1 from "../../assets/images/about-1.jpg";
-import About2 from "../../assets/images/about-2.jpg";
+import About1 from "../../../public/images/about-1.jpg";
+import About2 from "../../../public/images/about-2.jpg";
 
 
 const HomeAbout = () => {

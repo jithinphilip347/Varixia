@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
 import { gsap } from 'gsap'
-import FooterLogo from '../../assets/images/logo.png';
+import FooterLogo from '../../../public/images/logo.png';
 
 const Footer = () => {
   const footerRef = useRef(null)

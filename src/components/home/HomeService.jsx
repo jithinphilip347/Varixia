@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import { GoArrowRight, GoArrowUpRight } from "react-icons/go";
 import Image from "next/image"; 
-import ServiceImage from "../../assets/images/ui.webp"; 
+import ServiceImage from "../../../public/images/ui.webp"; 
 import gsap from "gsap";
 
 const services = [

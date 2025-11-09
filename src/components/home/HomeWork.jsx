@@ -3,11 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { HiArrowUpRight } from "react-icons/hi2";
 
-import Project1 from "../../assets/images/project1.webp";
-import Project2 from "../../assets/images/project2.webp";
-import Project3 from "../../assets/images/project3.webp";
-import Project4 from "../../assets/images/project4.webp";
-import Project5 from "../../assets/images/project5.webp";
+import Project1 from "../../../public/images/project1.webp";
+import Project2 from "../../../public/images/project2.webp";
+import Project3 from "../../../public/images/project3.webp";
+import Project4 from "../../../public/images/project4.webp";
+import Project5 from "../../../public/images/project5.webp";
 
 const projects = [
   { id: 1, image: Project1, name: "Project 1", desc: "Lorem ipsum content" },
