@@ -58,8 +58,8 @@ const HomeContact = () => {
             </div>
             <div className="HomeContactDec">
               <p>
-                Adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim.
+              We specialize in Web Development, Software Development, <br />
+              and Digital Marketing — building brands for the modern web.
               </p>
             </div>
             <div className="HomeContactAdressBox">

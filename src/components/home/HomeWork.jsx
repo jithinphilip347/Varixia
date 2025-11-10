@@ -29,21 +29,28 @@ const HomeWork = () => {
     const section = sectionRef.current;
     const scrollContent = scrollRef.current;
 
-    // Calculate scroll distance so it stops exactly at last card
-    const scrollDistance = scrollContent.scrollWidth - window.innerWidth;
+    // Cleanup existing triggers
+    ScrollTrigger.getAll().forEach((t) => t.kill());
 
-    gsap.to(scrollContent, {
-      x: -scrollDistance,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: () => `+=${scrollDistance}`,
-        scrub: 1,
-        pin: true,
-        invalidateOnRefresh: true,
-      },
-    });
+    // Only use GSAP scroll on desktop (≥1025px)
+    const mm = window.matchMedia("(min-width: 1025px)");
+
+    if (mm.matches) {
+      const scrollDistance = scrollContent.scrollWidth - window.innerWidth;
+
+      gsap.to(scrollContent, {
+        x: -scrollDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${scrollDistance}`,
+          scrub: 1,
+          pin: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());

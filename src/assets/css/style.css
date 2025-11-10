@@ -106,6 +106,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 480px) {
+  #Nav .NavMain .NavContact p {
+    padding: 0px 0px;
+    font-size: 13px;
+  }
+}
 #Nav .NavMain .NavContact svg {
   color: #fff;
   display: none;
@@ -693,6 +699,7 @@
 @media (max-width: 1024px) {
   #HomeService .ServiceBoxLeft {
     width: calc(100% - 260px);
+    gap: 10px;
   }
 }
 @media (max-width: 768px) {
@@ -707,6 +714,11 @@
   color: #555;
   font-size: 36px;
   transition: 0.3s;
+}
+@media (max-width: 480px) {
+  #HomeService .ServiceBoxLeft h2 {
+    font-size: 26px;
+  }
 }
 #HomeService .ServiceBoxLeft p {
   width: 60%;
@@ -743,9 +755,7 @@
 }
 @media (max-width: 1024px) {
   #HomeService .ServiceImgBox {
-    width: 220px;
-    height: 220px;
-    right: -30px;
+    display: none;
   }
 }
 @media (min-width: 769px) {
@@ -780,13 +790,19 @@
 #HomeWork {
   position: relative;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   background: #000;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 80px 40px;
+  /* Horizontal GSAP scroll on desktop */
+}
+@media (max-width: 1024px) {
+  #HomeWork {
+    padding: 0px 0px;
+  }
 }
 #HomeWork .HomeWorkHead {
   width: 100%;
@@ -794,6 +810,11 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
+}
+@media (max-width: 1024px) {
+  #HomeWork .HomeWorkHead {
+    margin-bottom: 0px;
+  }
 }
 #HomeWork .HomeWorkHead h2 {
   font-size: 80px;
@@ -826,6 +847,20 @@
   padding: 0;
   margin: 0;
   will-change: transform;
+  /* Responsive - switch to manual horizontal scroll */
+}
+@media (max-width: 1024px) {
+  #HomeWork .HomeWorkScroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    height: auto;
+    padding: 40px 20px;
+    cursor: grab;
+  }
 }
 #HomeWork .HomeWorkCard {
   flex: 0 0 35vw;
@@ -836,6 +871,26 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+@media (max-width: 1024px) {
+  #HomeWork .HomeWorkCard {
+    flex: 0 0 70%;
+    height: 60vh;
+  }
+}
+@media (max-width: 768px) {
+  #HomeWork .HomeWorkCard {
+    flex: 0 0 85%;
+    height: 55vh;
+  }
+}
+@media (max-width: 480px) {
+  #HomeWork .HomeWorkCard {
+    flex: 0 0 90%;
+    height: 50vh;
+  }
 }
 #HomeWork .HomeWorkCard .HomeWorkImgBox {
   position: relative;
@@ -881,6 +936,7 @@
   color: #05ddff;
   cursor: pointer;
   transition: color 0.3s;
+  justify-content: flex-start;
 }
 #HomeWork .HomeWorkCard .HomeWorkDetails .viewButton svg {
   font-size: 22px;
@@ -888,21 +944,6 @@
 }
 #HomeWork .HomeWorkCard .HomeWorkDetails .viewButton:hover svg {
   transform: rotate(45deg);
-}
-@media (max-width: 768px) {
-  #HomeWork {
-    height: auto;
-  }
-  #HomeWork .HomeWorkScroll {
-    flex-direction: column;
-    gap: 40px;
-    padding: 100px 20px;
-  }
-  #HomeWork .HomeWorkCard {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 60vh;
-  }
 }
 
 #HomeContact {
@@ -1033,7 +1074,11 @@
   font-size: 18px;
   color: var(--primaryColor);
 }
-#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .TextBox p {
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .TextBox a {
+  text-decoration: none;
+  color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .TextBox a p {
   color: #eee;
   font-size: 18px;
   font-weight: 400;
@@ -1199,7 +1244,6 @@
 
 #Footer {
   width: 100%;
-  padding: 60px 30px;
   background-color: #000;
 }
 #Footer .FooterMain {

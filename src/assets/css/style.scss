@@ -116,6 +116,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
+          @media(max-width:480px){
+            padding: 0px 0px;
+            font-size: 13px;
+          }
       }
       svg{
         color: #fff;
@@ -748,6 +752,7 @@
 
     @media (max-width: 1024px) {
       width: calc(100% - 260px);
+      gap: 10px;
     }
     @media (max-width: 768px) {
       width: 100%;
@@ -760,6 +765,9 @@
     color: #555;
     font-size: 36px;
     transition: 0.3s;
+    @media(max-width:480px){
+      font-size: 26px;
+    }
   }
   p {
     width: 60%;
@@ -796,9 +804,10 @@
     }
 
     @media (max-width: 1024px) {
-      width: 220px;
-      height: 220px;
-      right: -30px;
+      // width: 220px;
+      // height: 220px;
+      // right: -30px;
+      display: none;
     }
       @media (min-width: 769px) {
       display: block; 
@@ -842,72 +851,86 @@
 #HomeWork {
   position: relative;
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   overflow: hidden;
   background: #000;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  // .HomeWorkHead {
-  //   width: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   position: absolute;
-  //   top: 60px;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  //   z-index: 10;
-
-  //   h2 {
-  //     font-size: 80px;
-  //     text-align: center;
-  //     font-family: myFont1;
-  //     background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
-  //     -webkit-background-clip: text;
-  //     -webkit-text-fill-color: transparent;
-
-  //     @media (max-width: 1024px) { font-size: 60px; }
-  //     @media (max-width: 768px) { font-size: 40px; }
-  //     @media (max-width: 480px) { font-size: 30px; }
-  //   }
-  // }
-    .HomeWorkHead {
+  padding: 80px 40px;
+  @media(max-width:1024px){
+     padding: 0px 0px;
+    //  height: 0;
+  }
+  .HomeWorkHead {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
-
+     @media(max-width:1024px){
+      margin-bottom: 0px;
+    }
     h2 {
-      // color: white;
       font-size: 80px;
       text-align: center;
       font-family: myFont1;
-        background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+      background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
-      @media (max-width: 1024px) { font-size: 60px; }
-      @media (max-width: 768px) { font-size: 40px; }
-      @media (max-width: 480px) { font-size: 30px; }
+      @media (max-width: 1024px) {
+        font-size: 60px;
+      }
+      @media (max-width: 768px) {
+        font-size: 40px;
+      }
+      @media (max-width: 480px) {
+        font-size: 30px;
+      }
     }
   }
 
+  /* Horizontal GSAP scroll on desktop */
   .HomeWorkScroll {
     display: flex;
     align-items: center;
     height: 100%;
-    gap: 50px; // spacing between cards
-    padding: 0; // no side padding
-    margin: 0; // no margin top/bottom
+    gap: 50px;
+    padding: 0;
+    margin: 0;
     will-change: transform;
+
+    /* Responsive - switch to manual horizontal scroll */
+    @media (max-width: 1024px) {
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+      gap: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      height: auto;
+      padding: 40px 20px;
+      cursor: grab;
+
+      // &::-webkit-scrollbar {
+      //   height: 6px;
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   background: linear-gradient(90deg, #05ddff, #0069f7);
+      //   border-radius: 10px;
+      // }
+
+      // &::-webkit-scrollbar-track {
+      //   background: #111;
+      // }
+    }
   }
 
   .HomeWorkCard {
-    flex: 0 0 35vw; 
+    flex: 0 0 35vw;
     min-width: 340px;
     height: 70vh;
     background: #111;
@@ -915,12 +938,35 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    // &:hover {
+    //   transform: translateY(-8px);
+    //   box-shadow: 0 0 25px rgba(0, 191, 255, 0.2);
+    // }
+
+    @media (max-width: 1024px) {
+      flex: 0 0 70%;
+      height: 60vh;
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 85%;
+      height: 55vh;
+    }
+
+    @media (max-width: 480px) {
+      flex: 0 0 90%;
+      height: 50vh;
+    }
+
     .HomeWorkImgBox {
       position: relative;
       width: 100%;
       height: 60%;
       overflow: hidden;
-       
+
       img {
         width: 100%;
         height: 100%;
@@ -963,6 +1009,7 @@
         color: #05ddff;
         cursor: pointer;
         transition: color 0.3s;
+        justify-content: flex-start;
 
         svg {
           font-size: 22px;
@@ -975,23 +1022,8 @@
       }
     }
   }
-
-  @media (max-width: 768px) {
-    height: auto;
-
-    .HomeWorkScroll {
-      flex-direction: column;
-      gap: 40px;
-      padding: 100px 20px;
-    }
-
-    .HomeWorkCard {
-      flex: 0 0 auto;
-      width: 100%;
-      height: 60vh;
-    }
-  }
 }
+
 
 //Contact 
 #HomeContact {
@@ -1104,12 +1136,17 @@
           }
 
           .TextBox {
-            p {
+            a{
+              text-decoration: none;
+              color: #fff;
+             p {
               color: #eee;
               font-size: 18px;
               font-weight: 400;
               font-family: myFont1;
             }
+            }
+   
           }
         }
       }
@@ -1285,157 +1322,9 @@
 }
 
 //Footer
-// #Footer {
-//   width: 100%;
-//   padding: 60px 30px;
-//   background-color: #000;
-
-//   .FooterMain {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     padding-bottom: 40px;
-//     // margin-bottom: 30px;
-//   }
-  
-//   .FooterSection1 {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     text-align: center;
-//     margin-bottom: 40px;
-//     position: relative; // Add this for the ::after positioning
-//     padding-bottom: 40px; // Add padding to make space for the border
-
-//     &::after {
-//       content: " ";
-//       position: absolute;
-//       bottom: 0; // Position at the bottom of the section
-//       width: 100%;
-//       height: 1px;
-//       background: #d5d5d5;
-//     }
-
-//     .FooterShortTitle {
-//       p {
-//         font-size: 15px;
-//         font-family: myFont1;
-//         font-weight: 500;
-//         color: #797979;
-//         text-transform: uppercase;
-//         margin-bottom: 15px;
-//       }
-//     }
-    
-//     .FooterMainTitle {
-//       p {
-//         font-size: 20px;
-//         font-family: myFont1;
-//         font-weight: 500;
-//         color: #fff;
-//         text-transform: capitalize;
-//         margin-bottom: 20px;
-//       }
-//     }
-    
-//     .FooterDec {
-//       max-width: 600px;
-//       margin-bottom: 30px;
-      
-//       p {
-//         font-size: 15px;
-//         font-family: myFont1;
-//         font-weight: 400;
-//         color: #797979;
-//         text-transform: capitalize;
-//         line-height: 1.6;
-//       }
-//     }
-    
-//     .FooterContact {
-//       margin-bottom: 40px;
-      
-//       button {
-//         background: none;
-//         border: 1px solid #797979;
-//         outline: none;
-//         color: #fff;
-//         padding: 12px 30px;
-//         font-size: 16px;
-//         font-family: myFont1;
-//         cursor: pointer;
-//         transition: all 0.3s ease;
-        
-//         &:hover {
-//           border-color: #fff;
-//         }
-//       }
-//     }
-    
-//     .FooterCopyright {
-//       p {
-//         font-size: 15px;
-//         font-family: myFont1;
-//         font-weight: 400;
-//         color: #797979;
-//       }
-//     }
-//   }
-  
-//   .FooterSection2 {
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-    
-//     .FooterLogo {
-//       width: 150px;
-//       // height: 60px;
-      
-//       img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//       }
-//     }
-    
-//     .FooterSocialIcon {
-//       display: flex;
-//       align-items: center;
-//       gap: 15px;
-      
-//       a {
-//         width: 35px;
-//         height: 35px;
-//         border: 1px solid #d5d5d5;
-//         border-radius: 100%;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         color: #fff;
-//         transition: all 0.3s ease;
-        
-//         &:hover {
-//           border-color: var(--primaryColor)!important;
-//           color: var(--primaryColor)!important;
-//         }
-        
-//         svg {
-//           font-size: 16px;
-//         }
-//       }
-//     }
-//   }
-
-// }
-
-
 #Footer {
   width: 100%;
-  padding: 60px 30px;
+  // padding: 60px 30px;
   background-color: #000;
 
   .FooterMain {
@@ -1575,7 +1464,6 @@
   }
 }
 
-
 .cursor-outer {
   position: fixed;
   top: 0;
@@ -1611,7 +1499,6 @@
 
   transition: background-color 0.3s, transform 0.3s;
 }
-
 .cursor-text {
   position: relative;
   text-align: center;
@@ -1637,6 +1524,7 @@
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
 }
+
 
 .scroll-whatsapp-container {
   position: fixed;
