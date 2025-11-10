@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { FaInstagram, FaFacebookF, FaYoutube  , FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube , FaLinkedinIn  , FaTiktok } from 'react-icons/fa';
 import { RiArrowLeftWideFill , RiArrowRightWideFill } from "react-icons/ri";
 import { PiLineVertical } from "react-icons/pi";
 
@@ -15,8 +15,8 @@ const HomeBanner = () => {
     {
       id: 1,
       title: "Connect. Automate. Innovate.",
-      categoryLeft: "VIDEO / DANCE",
-      categoryRight: "INDUSTRY   ARTS",
+      categoryLeft: "VIDEO / AI",
+      categoryRight: "INDUSTRY   TECHNOLOGY",
       video: "/videos/bannerVideo.mp4"
     },
     
@@ -145,18 +145,18 @@ const HomeBanner = () => {
               </a>
             </div>
             <div className="SocialIconBox">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <FaInstagram />
+              <a href="https://www.instagram.com/varixialabs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FaInstagram  className='iconGradiant'/>
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="http://facebook.com/profile.php?id=61581803855154&sk=about" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FaFacebookF />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <FaYoutube />
+              <a href="https://www.linkedin.com/company/varixia-advanced-tech-lab/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <FaLinkedinIn  />
               </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <FaTiktok />
-              </a>
+              </a> */}
             </div>
           </div>
           <div className='SlideArrows'>

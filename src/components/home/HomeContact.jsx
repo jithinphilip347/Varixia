@@ -63,33 +63,38 @@ const HomeContact = () => {
               </p>
             </div>
             <div className="HomeContactAdressBox">
-              <div className="AdressBox">
-                <div className="Iconbox">
-                  <LuMapPin />
-                </div>
-                <div className="TextBox">
-                  <p>785 15h Street, Office 478 Berlin</p>
-                </div>
-              </div>
-              <div className="AdressBox">
-                <div className="Iconbox">
-                  <LuPhoneCall />
-                </div>
-                <div className="TextBox">
-                  <p>+1 840 841 25 69</p>
-                </div>
-              </div>
-              <div className="AdressBox">
-                <div className="Iconbox">
-                  <LuMail />
-                </div>
-                <div className="TextBox">
-                  <p>info@email.com</p>
-                </div>
-              </div>
+          <div className="AdressBox">
+            <div className="Iconbox">
+              <LuMapPin />
+            </div>
+            <div className="TextBox">
+              <a
+                href="https://www.google.com/maps/search/First+Floor+Vijo+Tower+Karukutty,+Erankulam,+Kochi,+India/@10.1000543,76.177041,45026m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                First Floor Vijo Tower Karukutty, Erankulam, Kochi, India
+              </a>
             </div>
           </div>
-
+        <div className="AdressBox">
+          <div className="Iconbox">
+            <LuPhoneCall />
+          </div>
+          <div className="TextBox">
+            <a href="tel:+917012725965">+91 7012725965</a>
+          </div>
+        </div>
+        <div className="AdressBox">
+          <div className="Iconbox">
+            <LuMail />
+          </div>
+          <div className="TextBox">
+            <a href="mailto:varixialbs@gmail.com">varixialbs@gmail.com</a>
+          </div>
+        </div>
+       </div>
+          </div>
           <div className="HomeContactRight">
             <div className="ContactForm">
               <form onSubmit={handleSubmit}>

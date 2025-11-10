@@ -1,27 +1,30 @@
+import '../assets/css/main.css';
+import '../assets/css/style.css';
+
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import Cursor from '../components/home/Cursor';
 import ScrollAnimations from '../components/scrollAnimations/ScrollAnimations';
 import ScrollWhatsapp from "../components/home/ScrollWhatsapp";
-
-import '../assets/css/main.css';
-import '../assets/css/style.css';
+// import ClientWrapper from '../components/splash/ClientWrapper';
 
 export const metadata = {
-  title: "",
-  description: "",
+  title: "Varixia | Advanced Tech Labs",
+  description: "Welcome to Varixia",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Cursor /> 
-        <Navbar />
-        <ScrollAnimations />
-        {children}
-        <Footer />
-        <ScrollWhatsapp /> 
+        {/* <ClientWrapper> */}
+          <Cursor />
+          <Navbar />
+          <ScrollAnimations />
+          {children}
+          <Footer />
+          <ScrollWhatsapp />
+        {/* </ClientWrapper> */}
       </body>
     </html>
   );

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect } from "react";
-import About1 from "../../../public/images/about-1.jpg";
+import About1 from "../../../public/images/about-1.png";
 import About2 from "../../../public/images/about-2.jpg";
 
 
@@ -35,7 +35,7 @@ const HomeAbout = () => {
       <div className="container">
         {/* Heading */}
         <div className="HomeAboutHead">
-          <h2>About Kalavardhini</h2>
+          <h2>About Varixia Labs</h2> 
         </div>
 
         <div className="HomeAboutMain">
@@ -48,13 +48,14 @@ const HomeAbout = () => {
             </div>
             <div className="HomeAboutRight fade-right">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ut libero ut arcu feugiat malesuada.
+                At Varixia, we are passionate about creating innovative digital solutions that empower businesses 
+                to thrive in the modern world. With over a decade of experience, our team of expert developers,
+                 designers, and marketers work together to deliver exceptional results.
               </p>
-              <p>
+              {/* <p>
                 Vivamus feugiat, purus nec luctus posuere, sapien justo
                 ullamcorper nisl, non ultrices nunc justo sed lorem.
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -62,13 +63,15 @@ const HomeAbout = () => {
           <div className="HomeAboutSection HomeAboutSection2">
             <div className="HomeAboutLeft fade-left">
               <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium.
+               We specialize in web development, mobile app development, custom software solutions, 
+               and comprehensive digital marketing strategies. Our approach combines creativity, 
+               technical expertise, and strategic thinking to build products that not only look 
+               great but deliver real business value.
               </p>
-              <p>
+              {/* <p>
                 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
                 aut fugit, sed quia consequuntur magni dolores.
-              </p>
+              </p> */}
             </div>
             <div className="HomeAboutRight">
               <div className="HomeAboutImg">

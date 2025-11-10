@@ -26,8 +26,7 @@
   }
 }
 #Nav .NavMain .NavLogo {
-  width: 60px;
-  height: 60px;
+  width: 150px;
 }
 #Nav .NavMain .NavLogo img {
   width: 100%;
@@ -61,22 +60,26 @@
   left: 50%;
   width: 0;
   height: 1px;
-  background: var(--primaryColor);
   transition: all 0.3s ease;
   transform: translateX(-50%);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #003ffa);
 }
 #Nav .NavMain .NavLink ul li:hover {
-  color: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #Nav .NavMain .NavLink ul li:hover::after {
   width: 100%;
 }
 #Nav .NavMain .NavLink ul li.active {
-  color: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #Nav .NavMain .NavLink ul li.active::after {
   width: 80%;
-  background: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
 }
 @media (max-width: 1024px) {
   #Nav .NavMain .NavLink {
@@ -97,6 +100,11 @@
   transition: all 0.3s ease;
   padding: 8px 12px;
   letter-spacing: 1px;
+}
+#Nav .NavMain .NavContact p:hover {
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #Nav .NavMain .NavContact svg {
   color: #fff;
@@ -150,7 +158,9 @@
 }
 #Sidenav .SidenavContent .closeIcon:hover {
   transform: rotate(90deg) scale(1.1);
-  color: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #Sidenav .SidenavContent ul {
   list-style: none;
@@ -169,7 +179,9 @@
   font-weight: 900;
 }
 #Sidenav .SidenavContent ul li:hover {
-  color: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #HomeBanner {
@@ -217,7 +229,9 @@
   transform: rotate(180deg);
   background: transparent;
   border: none;
-  color: #fff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: myFont1;
   font-size: 15px;
   letter-spacing: 2px;
@@ -366,11 +380,13 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
   transition: width 0.5s ease;
 }
 #HomeBanner .BannerMain .BannerContent .BannerContact .ContactBox .lets-talk:hover {
-  color: var(--primaryColor);
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #HomeBanner .BannerMain .BannerContent .BannerContact .ContactBox .lets-talk:hover .underline {
   width: 100%;
@@ -380,7 +396,7 @@
   gap: 20px;
 }
 #HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a {
-  color: #fff;
+  color: var(--primaryColor);
   font-size: 18px;
   transition: all 0.3s ease;
   display: flex;
@@ -389,7 +405,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--primaryColor);
 }
 #HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a:hover {
   color: var(--primaryColor);
@@ -460,7 +476,9 @@
   font-size: 80px;
   font-weight: 600;
   font-family: myFont1;
-  color: #fff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 1024px) {
   #HomeAbout .HomeAboutHead h2 {
@@ -482,7 +500,6 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  /* Section 1 specific layout */
   /* Section 2 specific layout */
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection {
@@ -558,11 +575,15 @@
   color: #fff;
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection1 {
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid transparent;
+  -o-border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
+     border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection1 .HomeAboutLeft {
   flex: 0 0 35%;
-  border-right: 1px solid #eee;
+  border-right: 2px solid transparent;
+  -o-border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
+     border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
   padding-right: 20px;
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection1 .HomeAboutRight {
@@ -573,7 +594,9 @@
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection2 .HomeAboutRight {
   flex: 0 0 35%;
-  border-left: 1px solid #eee;
+  border-left: 2px solid transparent;
+  -o-border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
+     border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
   padding-left: 20px;
 }
 #HomeAbout .fade-right {
@@ -593,111 +616,6 @@
 #HomeAbout .fade-left.visible {
   opacity: 1;
   transform: translateX(0);
-}
-
-#HomeGallery {
-  padding: 100px 0;
-  width: 100%;
-}
-@media (max-width: 1024px) {
-  #HomeGallery {
-    padding: 80px 0;
-  }
-}
-@media (max-width: 768px) {
-  #HomeGallery {
-    padding: 60px 0;
-  }
-}
-@media (max-width: 480px) {
-  #HomeGallery {
-    padding: 30px 0;
-  }
-}
-#HomeGallery .HomeGalleryHead {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-#HomeGallery .HomeGalleryHead h2 {
-  font-size: 80px;
-  font-weight: 600;
-  font-family: myFont1;
-  color: #fff;
-  text-align: center;
-}
-@media (max-width: 1024px) {
-  #HomeGallery .HomeGalleryHead h2 {
-    font-size: 60px;
-  }
-}
-@media (max-width: 768px) {
-  #HomeGallery .HomeGalleryHead h2 {
-    font-size: 40px;
-  }
-}
-@media (max-width: 480px) {
-  #HomeGallery .HomeGalleryHead h2 {
-    font-size: 30px;
-  }
-}
-#HomeGallery .HomeGalleryMain {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem {
-  width: 16.6666666667%;
-  height: 120px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem:hover .HomeGalleryImage img {
-  transform: scale(1.05);
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: transform 0.5s ease;
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage .gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage .gallery-overlay .view-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--primaryColor);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-#HomeGallery .HomeGalleryMain .HomeGalleryItem .HomeGalleryImage .gallery-overlay .view-icon:hover {
-  transform: scale(1.1);
 }
 
 #HomeService {
@@ -727,11 +645,13 @@
   margin-bottom: 50px;
 }
 #HomeService .HomeServiceHead h2 {
-  color: white;
   font-size: 80px;
   text-align: center;
   margin-bottom: 50px;
   font-family: myFont1;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 1024px) {
   #HomeService .HomeServiceHead h2 {
@@ -848,7 +768,6 @@
   display: none;
 }
 #HomeService .ServiceIconBox:hover {
-  background: white;
   color: black;
 }
 #HomeService .ServiceBox:hover .icon-hover {
@@ -859,23 +778,15 @@
 }
 
 #HomeWork {
-  padding: 100px 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   background: #000;
-}
-@media (max-width: 1024px) {
-  #HomeWork {
-    padding: 80px 0;
-  }
-}
-@media (max-width: 768px) {
-  #HomeWork {
-    padding: 60px 0;
-  }
-}
-@media (max-width: 480px) {
-  #HomeWork {
-    padding: 30px 0;
-  }
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #HomeWork .HomeWorkHead {
   width: 100%;
@@ -885,10 +796,12 @@
   margin-bottom: 50px;
 }
 #HomeWork .HomeWorkHead h2 {
-  color: white;
   font-size: 80px;
   text-align: center;
   font-family: myFont1;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 1024px) {
   #HomeWork .HomeWorkHead h2 {
@@ -905,93 +818,91 @@
     font-size: 30px;
   }
 }
-#HomeWork .HomeWorkMain {
+#HomeWork .HomeWorkScroll {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+  will-change: transform;
+}
+#HomeWork .HomeWorkCard {
+  flex: 0 0 35vw;
+  min-width: 340px;
+  height: 70vh;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  width: 100%;
 }
-#HomeWork .HomeWorkBox {
-  display: flex;
-  gap: 40px;
-  width: 100%;
-  align-items: center;
-}
-#HomeWork .HomeWorkBox.leftImage {
-  flex-direction: row;
-}
-#HomeWork .HomeWorkBox.rightImage {
-  flex-direction: row-reverse;
-}
-@media (max-width: 768px) {
-  #HomeWork .HomeWorkBox {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-#HomeWork .HomeWorkBox .HomeWorkImgBox {
-  width: 50%;
-  height: 80vh;
+#HomeWork .HomeWorkCard .HomeWorkImgBox {
   position: relative;
+  width: 100%;
+  height: 60%;
   overflow: hidden;
-  border-radius: 10px;
 }
-@media (max-width: 768px) {
-  #HomeWork .HomeWorkBox .HomeWorkImgBox {
-    width: 100%;
-    height: 50vh;
-  }
+#HomeWork .HomeWorkCard .HomeWorkImgBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
 }
-#HomeWork .HomeWorkBox .HomeWorkContentBox {
+#HomeWork .HomeWorkCard .HomeWorkImgBox:hover img {
+  transform: scale(1.1);
+}
+#HomeWork .HomeWorkCard .HomeWorkDetails {
+  height: 40%;
+  padding: 20px 25px;
+  background: #0c0c0c;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
+}
+#HomeWork .HomeWorkCard .HomeWorkDetails h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: myFont1;
+}
+#HomeWork .HomeWorkCard .HomeWorkDetails p {
+  font-size: 15px;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+#HomeWork .HomeWorkCard .HomeWorkDetails .viewButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #05ddff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#HomeWork .HomeWorkCard .HomeWorkDetails .viewButton svg {
+  font-size: 22px;
+  transition: transform 0.3s;
+}
+#HomeWork .HomeWorkCard .HomeWorkDetails .viewButton:hover svg {
+  transform: rotate(45deg);
 }
 @media (max-width: 768px) {
-  #HomeWork .HomeWorkBox .HomeWorkContentBox {
-    width: 100%;
-    align-items: center;
-    text-align: center;
+  #HomeWork {
+    height: auto;
   }
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: #fff;
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent h2 {
-  font-size: 26px;
-  font-weight: 500;
-  font-family: myFont1;
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent p {
-  font-size: 16px;
-  font-weight: 500;
-  font-family: myFont1;
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent:last-child {
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .HomeWorkContent:last-child p {
-  font-size: 24px;
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .ButtonBox {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-}
-#HomeWork .HomeWorkBox .HomeWorkContentBox .ButtonBox:hover {
-  border-color: #ff0000;
-  transform: rotate(20deg);
+  #HomeWork .HomeWorkScroll {
+    flex-direction: column;
+    gap: 40px;
+    padding: 100px 20px;
+  }
+  #HomeWork .HomeWorkCard {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 60vh;
+  }
 }
 
 #HomeContact {
@@ -1024,7 +935,9 @@
   font-size: 80px;
   font-weight: 600;
   font-family: myFont1;
-  color: #fff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
 }
 @media (max-width: 1024px) {
@@ -1118,7 +1031,7 @@
 }
 #HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .Iconbox {
   font-size: 18px;
-  color: #fff;
+  color: var(--primaryColor);
 }
 #HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .TextBox p {
   color: #eee;
@@ -1168,7 +1081,7 @@
   align-items: flex-start;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField .fieldIcon {
-  color: #fff;
+  color: var(--primaryColor);
   margin-right: 10px;
   font-size: 18px;
   flex-shrink: 0;
@@ -1221,7 +1134,7 @@
   gap: 10px;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField .fieldIcon {
-  color: #fff;
+  color: var(--primaryColor);
   font-size: 18px;
   margin-top: 12px;
 }
@@ -1251,8 +1164,8 @@
   width: 100%;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button {
-  background: #fff;
-  border: none;
+  background: #000;
+  border: 1px solid var(--primaryColor);
   outline: none;
   padding: 12px 20px;
   display: flex;
@@ -1262,18 +1175,15 @@
   transition: background 0.3s ease;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button svg {
-  color: #000;
+  color: var(--primaryColor);
   font-size: 20px;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button p {
-  color: #000;
+  color: var(--primaryColor);
   font-size: 16px;
   font-weight: 400;
   font-family: myFont1;
   text-transform: capitalize;
-}
-#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button:hover {
-  background: #ddd;
 }
 #HomeContact .ContactMap {
   width: 100%;
@@ -1309,14 +1219,15 @@
   margin-bottom: 40px;
   position: relative;
   padding-bottom: 40px;
+  /* gradient divider line */
 }
 #Footer .FooterSection1::after {
-  content: " ";
+  content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: #d5d5d5;
+  background: linear-gradient(90deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
 }
 #Footer .FooterSection1 .FooterShortTitle p {
   font-size: 15px;
@@ -1327,12 +1238,14 @@
   margin-bottom: 15px;
 }
 #Footer .FooterSection1 .FooterMainTitle p {
-  font-size: 20px;
+  font-size: 22px;
   font-family: myFont1;
-  font-weight: 500;
-  color: #fff;
+  font-weight: 600;
   text-transform: capitalize;
   margin-bottom: 20px;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #Footer .FooterSection1 .FooterDec {
   max-width: 600px;
@@ -1343,7 +1256,7 @@
   font-family: myFont1;
   font-weight: 400;
   color: #797979;
-  text-transform: capitalize;
+  text-transform: none;
   line-height: 1.6;
 }
 #Footer .FooterSection1 .FooterContact {
@@ -1351,9 +1264,9 @@
 }
 #Footer .FooterSection1 .FooterContact button {
   background: none;
-  border: 1px solid #797979;
+  border: 1px solid var(--primaryColor) !important;
   outline: none;
-  color: #fff;
+  color: var(--primaryColor);
   padding: 12px 30px;
   font-size: 16px;
   font-family: myFont1;
@@ -1361,10 +1274,11 @@
   transition: all 0.3s ease;
 }
 #Footer .FooterSection1 .FooterContact button:hover {
-  border-color: #fff;
+  border-color: var(--primaryColor) !important;
+  color: var(--primaryColor);
 }
 #Footer .FooterSection1 .FooterCopyright p {
-  font-size: 15px;
+  font-size: 14px;
   font-family: myFont1;
   font-weight: 400;
   color: #797979;
@@ -1376,14 +1290,11 @@
   justify-content: space-between;
 }
 #Footer .FooterSection2 .FooterLogo {
-  width: 60px;
-  height: 60px;
+  width: 150px;
 }
 #Footer .FooterSection2 .FooterLogo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 #Footer .FooterSection2 .FooterSocialIcon {
   display: flex;
@@ -1393,17 +1304,17 @@
 #Footer .FooterSection2 .FooterSocialIcon a {
   width: 35px;
   height: 35px;
-  border: 1px solid #d5d5d5;
-  border-radius: 100%;
+  border: 1px solid var(--primaryColor) !important;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--primaryColor) !important;
   transition: all 0.3s ease;
 }
 #Footer .FooterSection2 .FooterSocialIcon a:hover {
-  border-color: #fff;
-  color: var(--primaryColor);
+  border-color: var(--primaryColor) !important;
+  color: var(--primaryColor) !important;
 }
 #Footer .FooterSection2 .FooterSocialIcon a svg {
   font-size: 16px;
@@ -1413,28 +1324,45 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #fff;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  background-origin: border-box;
+  background-clip: border-box;
   transition: background-color 0.3s, transform 0.3s;
+}
+.cursor-outer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .cursor-text {
-  position: absolute;
+  position: relative;
   text-align: center;
-  font-size: 10px;
-  line-height: 1.2;
+  font-size: 5px;
+  font-weight: 600;
   color: #000;
+  background: transparent;
   pointer-events: none;
   opacity: 0;
+  line-height: 1.2;
+  transition: opacity 0.3s ease;
 }
 
 .cursor-inner {
@@ -1443,7 +1371,7 @@
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: #fff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
