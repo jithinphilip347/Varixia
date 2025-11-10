@@ -28,11 +28,17 @@
 #Nav .NavMain .NavLogo {
   width: 150px;
 }
+@media (max-width: 480px) {
+  #Nav .NavMain .NavLogo {
+    width: 110px;
+    height: 45px;
+  }
+}
 #Nav .NavMain .NavLogo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #Nav .NavMain .NavLink ul {
   display: flex;
@@ -109,7 +115,7 @@
 @media (max-width: 480px) {
   #Nav .NavMain .NavContact p {
     padding: 0px 0px;
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 #Nav .NavMain .NavContact svg {
