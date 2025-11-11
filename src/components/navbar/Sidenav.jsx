@@ -7,10 +7,10 @@ const Sidenav = ({ isOpen, onClose }) => {
   const handleScrollToSection = (id) => {
     const section = document.querySelector(id);
     if (section) {
-      const offset = 80; // adjust for fixed navbar height
+      const offset = 80; 
       const topPosition = section.offsetTop - offset;
       window.scrollTo({ top: topPosition, behavior: "smooth" });
-      onClose(); // close sidenav after clicking
+      onClose(); 
     }
   };
 

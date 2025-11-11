@@ -84,7 +84,7 @@ const HomeContact = () => {
                 </div>
                 <div className="TextBox">
                   <a
-                    href="https://www.google.com/maps/search/First+Floor+Vijo+Tower+Karukutty,+Erankulam,+Kochi,+India/@10.1000543,76.177041,45026m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
+                    href="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3062.378061272568!2d76.37095207503427!3d10.230265989887211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDEzJzQ5LjAiTiA3NsKwMjInMjQuNyJF!5e1!3m2!1sen!2sin!4v1762859513771!5m2!1sen!2sin"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -203,7 +203,7 @@ const HomeContact = () => {
       </div>
       <div className="ContactMap">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.245655245865!2d54.37655467535857!3d24.476943878181537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e671d78753635%3A0x69fbce3421eedcf8!2sKalavardhini%20Arts%20Center%20L.L.C!5e0!3m2!1sen!2sin!4v1758427273722!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3062.378061272568!2d76.37095207503427!3d10.230265989887211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDEzJzQ5LjAiTiA3NsKwMjInMjQuNyJF!5e1!3m2!1sen!2sin!4v1762859513771!5m2!1sen!2sin"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

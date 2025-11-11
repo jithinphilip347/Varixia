@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { FaInstagram, FaFacebookF, FaYoutube , FaLinkedinIn} from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import { gsap } from "gsap";
 import FooterLogo from "../../../public/images/footer-logo.png";
 
@@ -88,16 +93,16 @@ const Footer = () => {
             </div>
 
             <div className="FooterCopyright">
-              <p>© {new Date().getFullYear()} Varixia Technologies. All rights reserved.</p>
+              <p>
+                © {new Date().getFullYear()} Varixia Technologies. All rights
+                reserved.
+              </p>
             </div>
           </div>
 
           <div className="FooterSection2">
             <div className="FooterLogo">
-              <Image
-                src={FooterLogo}
-                alt="Varixia Logo"
-              />
+              <Image src={FooterLogo} alt="Varixia Logo" />
             </div>
 
             {/* <div className="FooterSocialIcon">
@@ -130,35 +135,34 @@ const Footer = () => {
               </a>
             </div> */}
             <div className="FooterSocialIcon">
-  <a
-    href="https://www.instagram.com/varixialabs/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-    ref={(el) => (socialIconsRef.current[0] = el)}
-  >
-    <FaInstagram />
-  </a>
-  <a
-    href="http://facebook.com/profile.php?id=61581803855154&sk=about"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-    ref={(el) => (socialIconsRef.current[1] = el)}
-  >
-    <FaFacebookF />
-  </a>
-  <a
-    href="https://www.linkedin.com/company/varixia-advanced-tech-lab/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-    ref={(el) => (socialIconsRef.current[2] = el)}
-  >
-    <FaLinkedinIn />
-  </a>
-</div>
-
+              <a
+                href="https://www.instagram.com/varixialabs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                ref={(el) => (socialIconsRef.current[0] = el)}
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="http://facebook.com/profile.php?id=61581803855154&sk=about"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                ref={(el) => (socialIconsRef.current[1] = el)}
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/varixia-advanced-tech-lab/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                ref={(el) => (socialIconsRef.current[2] = el)}
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
         </div>
       </div>

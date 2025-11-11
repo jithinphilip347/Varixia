@@ -19,59 +19,59 @@ const HomeBanner = () => {
     {
       id: 1,
       title: "Connect. Automate. Innovate.",
-      categoryLeft: "VIDEO / AI",
-      categoryRight: "INDUSTRY   TECHNOLOGY",
+      // categoryLeft: "VIDEO / AI",
+      // categoryRight: "INDUSTRY   TECHNOLOGY",
       video: "/videos/bannerVideo.mp4",
     },
   ];
 
-  const totalSlides = slides.length;
+  // const totalSlides = slides.length;
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  // };
 
-  useEffect(() => {
-    if (bannerContentRef.current) {
-      gsap.to(bannerContentRef.current.children, {
-        opacity: 0,
-        x: -100,
-        duration: 0.4,
-        stagger: 0.1,
-        onComplete: () => {
-          gsap.fromTo(
-            bannerContentRef.current.children,
-            { opacity: 0, x: 100 },
-            { opacity: 1, x: 0, duration: 0.6, stagger: 0.1 }
-          );
-        },
-      });
-    }
-  }, [currentSlide]);
+  // useEffect(() => {
+  //   if (bannerContentRef.current) {
+  //     gsap.to(bannerContentRef.current.children, {
+  //       opacity: 0,
+  //       x: -100,
+  //       duration: 0.4,
+  //       stagger: 0.1,
+  //       onComplete: () => {
+  //         gsap.fromTo(
+  //           bannerContentRef.current.children,
+  //           { opacity: 0, x: 100 },
+  //           { opacity: 1, x: 0, duration: 0.6, stagger: 0.1 }
+  //         );
+  //       },
+  //     });
+  //   }
+  // }, [currentSlide]);
 
-  const renderCategoryLeft = (text) => {
-    const parts = text.split(" / ");
-    return (
-      <>
-        <span className="fixed-color">{parts[0]} / </span>
-        <span className="change-color">{parts[1]}</span>
-      </>
-    );
-  };
+  // const renderCategoryLeft = (text) => {
+  //   const parts = text.split(" / ");
+  //   return (
+  //     <>
+  //       <span className="fixed-color">{parts[0]} / </span>
+  //       <span className="change-color">{parts[1]}</span>
+  //     </>
+  //   );
+  // };
 
-  const renderCategoryRight = (text) => {
-    const parts = text.split("  ");
-    return (
-      <>
-        <span className="fixed-color">{parts[0]} </span>
-        <span className="change-color">{parts[1]}</span>
-      </>
-    );
-  };
+  // const renderCategoryRight = (text) => {
+  //   const parts = text.split("  ");
+  //   return (
+  //     <>
+  //       <span className="fixed-color">{parts[0]} </span>
+  //       <span className="change-color">{parts[1]}</span>
+  //     </>
+  //   );
+  // };
 
   return (
     <div id="HomeBanner">
@@ -82,7 +82,7 @@ const HomeBanner = () => {
 
         <div className="BannerOverlay"></div>
 
-        <div className="SideNav leftNav">
+        {/* <div className="SideNav leftNav">
           <div className="NavInner">
             <button className="NavText" onClick={prevSlide}>
               PREV
@@ -96,16 +96,16 @@ const HomeBanner = () => {
               NEXT
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="BannerContent" ref={bannerContentRef}>
           <div className="SlideCounter">
-            <span className="CurrentSlide">
+            {/* <span className="CurrentSlide">
               {(currentSlide + 1).toString().padStart(2, "0")}
             </span>
             <span className="TotalSlides">
               /{totalSlides.toString().padStart(2, "0")}
-            </span>
+            </span> */}
           </div>
 
           <h1 className="BannerTitle">
@@ -117,22 +117,22 @@ const HomeBanner = () => {
             ))}
           </h1>
 
-          <div className="DanceBannerBox">
+          {/* <div className="DanceBannerBox">
             <div className="ArtsBox">
               <p>{renderCategoryLeft(slides[currentSlide].categoryLeft)}</p>
             </div>
             <div className="IndustryBox">
               <p>{renderCategoryRight(slides[currentSlide].categoryRight)}</p>
             </div>
-          </div>
+          </div> */}
 
           <div className="BannerContact">
-            <div className="ContactBox">
+            {/* <div className="ContactBox">
               <a href="#contact" className="lets-talk">
                 LET'S TALK
                 <span className="underline"></span>
               </a>
-            </div>
+            </div> */}
             <div className="SocialIconBox">
               <a
                 href="https://www.instagram.com/varixialabs/"
@@ -160,7 +160,7 @@ const HomeBanner = () => {
               </a>
             </div>
           </div>
-          <div className="SlideArrows">
+          {/* <div className="SlideArrows">
             <div className="Arrows">
               <button className="ArrowBtn" onClick={prevSlide}>
                 <RiArrowLeftWideFill />
@@ -170,7 +170,7 @@ const HomeBanner = () => {
                 <RiArrowRightWideFill />
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

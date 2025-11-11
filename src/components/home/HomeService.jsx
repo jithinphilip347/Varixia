@@ -58,36 +58,6 @@ const HomeService = () => {
     );
   }, []);
 
-  // const handleMouseEnter = (index) => {
-  //   gsap.to(titleRefs.current[index], { color: "#fff", scale: 1.05, duration: 0.3 });
-  //   gsap.to(descRefs.current[index], { color: "#fff", duration: 0.3 });
-  //   gsap.to(iconRefs.current[index], { borderColor: "#fff", color: "#fff", duration: 0.3 });
-
-  //   gsap.to(imgRefs.current[index], {
-  //     x: 0,
-  //     autoAlpha: 1,
-  //     scale: 1.03,
-  //     rotation: 2,
-  //     duration: 0.5,
-  //     ease: "power3.out",
-  //   });
-  // };
-
-  // const handleMouseLeave = (index) => {
-  //   gsap.to(titleRefs.current[index], { color: "#555", scale: 1, duration: 0.3 });
-  //   gsap.to(descRefs.current[index], { color: "#555", duration: 0.3 });
-  //   gsap.to(iconRefs.current[index], { borderColor: "#555", color: "#555", duration: 0.3 });
-
-  //   gsap.to(imgRefs.current[index], {
-  //     x: 60,
-  //     autoAlpha: 0,
-  //     scale: 1,
-  //     rotation: 0,
-  //     duration: 0.5,
-  //     ease: "power3.inOut",
-  //   });
-  // };
-
   const handleMouseEnter = (index) => {
   // Animate scale
   gsap.to(titleRefs.current[index], { scale: 1.05, duration: 0.3, ease: "power2.out" });
@@ -125,8 +95,6 @@ const handleMouseLeave = (index) => {
     ease: "power3.inOut",
   });
 };
-
-
 
   return (
     <div id="HomeService">
