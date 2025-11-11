@@ -58,35 +58,75 @@ const HomeService = () => {
     );
   }, []);
 
+  // const handleMouseEnter = (index) => {
+  //   gsap.to(titleRefs.current[index], { color: "#fff", scale: 1.05, duration: 0.3 });
+  //   gsap.to(descRefs.current[index], { color: "#fff", duration: 0.3 });
+  //   gsap.to(iconRefs.current[index], { borderColor: "#fff", color: "#fff", duration: 0.3 });
+
+  //   gsap.to(imgRefs.current[index], {
+  //     x: 0,
+  //     autoAlpha: 1,
+  //     scale: 1.03,
+  //     rotation: 2,
+  //     duration: 0.5,
+  //     ease: "power3.out",
+  //   });
+  // };
+
+  // const handleMouseLeave = (index) => {
+  //   gsap.to(titleRefs.current[index], { color: "#555", scale: 1, duration: 0.3 });
+  //   gsap.to(descRefs.current[index], { color: "#555", duration: 0.3 });
+  //   gsap.to(iconRefs.current[index], { borderColor: "#555", color: "#555", duration: 0.3 });
+
+  //   gsap.to(imgRefs.current[index], {
+  //     x: 60,
+  //     autoAlpha: 0,
+  //     scale: 1,
+  //     rotation: 0,
+  //     duration: 0.5,
+  //     ease: "power3.inOut",
+  //   });
+  // };
+
   const handleMouseEnter = (index) => {
-    gsap.to(titleRefs.current[index], { color: "#fff", scale: 1.05, duration: 0.3 });
-    gsap.to(descRefs.current[index], { color: "#fff", duration: 0.3 });
-    gsap.to(iconRefs.current[index], { borderColor: "#fff", color: "#fff", duration: 0.3 });
+  // Animate scale
+  gsap.to(titleRefs.current[index], { scale: 1.05, duration: 0.3, ease: "power2.out" });
+  gsap.to(descRefs.current[index], { color: "#fff", duration: 0.3 });
+  gsap.to(iconRefs.current[index], { borderColor: "#fff", color: "#fff", duration: 0.3 });
 
-    gsap.to(imgRefs.current[index], {
-      x: 0,
-      autoAlpha: 1,
-      scale: 1.03,
-      rotation: 2,
-      duration: 0.5,
-      ease: "power3.out",
-    });
-  };
+  // Apply gradient text effect
+  titleRefs.current[index].classList.add("gradient-text");
 
-  const handleMouseLeave = (index) => {
-    gsap.to(titleRefs.current[index], { color: "#555", scale: 1, duration: 0.3 });
-    gsap.to(descRefs.current[index], { color: "#555", duration: 0.3 });
-    gsap.to(iconRefs.current[index], { borderColor: "#555", color: "#555", duration: 0.3 });
+  // Image animation
+  gsap.to(imgRefs.current[index], {
+    x: 0,
+    autoAlpha: 1,
+    scale: 1.03,
+    rotation: 2,
+    duration: 0.5,
+    ease: "power3.out",
+  });
+};
 
-    gsap.to(imgRefs.current[index], {
-      x: 60,
-      autoAlpha: 0,
-      scale: 1,
-      rotation: 0,
-      duration: 0.5,
-      ease: "power3.inOut",
-    });
-  };
+const handleMouseLeave = (index) => {
+  titleRefs.current[index].classList.remove("gradient-text");
+
+
+  gsap.to(titleRefs.current[index], { color: "#cfcdcdff", scale: 1, duration: 0.3 });
+  gsap.to(descRefs.current[index], { color: "#cfcdcdff", duration: 0.3 });
+  gsap.to(iconRefs.current[index], { borderColor: "#cfcdcdff", color: "#cfcdcdff", duration: 0.3 });
+
+  gsap.to(imgRefs.current[index], {
+    x: 60,
+    autoAlpha: 0,
+    scale: 1,
+    rotation: 0,
+    duration: 0.5,
+    ease: "power3.inOut",
+  });
+};
+
+
 
   return (
     <div id="HomeService">

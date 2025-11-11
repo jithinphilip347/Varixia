@@ -39,27 +39,26 @@ const Footer = () => {
       });
     }
 
-    // Social icons hover animation
-    socialIconsRef.current.forEach((icon) => {
-      if (icon) {
-        icon.addEventListener("mouseenter", () => {
-          gsap.to(icon, {
-            borderColor: "#05ddff",
-            color: "#05ddff",
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        });
-        icon.addEventListener("mouseleave", () => {
-          gsap.to(icon, {
-            borderColor: "#d5d5d5",
-            color: "#fff",
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        });
-      }
-    });
+    // socialIconsRef.current.forEach((icon) => {
+    //   if (icon) {
+    //     icon.addEventListener("mouseenter", () => {
+    //       gsap.to(icon, {
+    //         borderColor: "#05ddff",
+    //         color: "#05ddff",
+    //         duration: 0.3,
+    //         ease: "power2.out",
+    //       });
+    //     });
+    //     icon.addEventListener("mouseleave", () => {
+    //       gsap.to(icon, {
+    //         borderColor: "#d5d5d5",
+    //         color: "#fff",
+    //         duration: 0.3,
+    //         ease: "power2.out",
+    //       });
+    //     });
+    //   }
+    // });
   }, []);
 
   return (
@@ -98,12 +97,10 @@ const Footer = () => {
               <Image
                 src={FooterLogo}
                 alt="Varixia Logo"
-                // width={60}
-                // height={60}
               />
             </div>
 
-            <div className="FooterSocialIcon">
+            {/* <div className="FooterSocialIcon">
               <a
                 href="https://www.instagram.com/varixialabs/"
                 target="_blank"
@@ -131,7 +128,37 @@ const Footer = () => {
               >
                 <FaLinkedinIn />
               </a>
-            </div>
+            </div> */}
+            <div className="FooterSocialIcon">
+  <a
+    href="https://www.instagram.com/varixialabs/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    ref={(el) => (socialIconsRef.current[0] = el)}
+  >
+    <FaInstagram />
+  </a>
+  <a
+    href="http://facebook.com/profile.php?id=61581803855154&sk=about"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    ref={(el) => (socialIconsRef.current[1] = el)}
+  >
+    <FaFacebookF />
+  </a>
+  <a
+    href="https://www.linkedin.com/company/varixia-advanced-tech-lab/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    ref={(el) => (socialIconsRef.current[2] = el)}
+  >
+    <FaLinkedinIn />
+  </a>
+</div>
+
           </div>
         </div>
       </div>

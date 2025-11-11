@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState , useRef , useEffect} from "react";
 import {
   LuPhoneCall,
   LuMail,
@@ -9,8 +9,8 @@ import {
   LuUser,
   LuInfo,
   LuPen,
+  LuChevronDown,
 } from "react-icons/lu";
-// import MapEmbed from "./MapEmbed";
 
 const HomeContact = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +22,22 @@ const HomeContact = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const dropdownRef = useRef();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); 
+    setErrors({ ...errors, [e.target.name]: "" });
   };
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const servicesList = [
+    "Web Development",
+    "App Development",
+    "Software Development",
+    "Digital Marketing",
+    "Others",
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +53,16 @@ const HomeContact = () => {
     }
   };
 
+  useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      setIsDropdownOpen(false);
+    }
+  };
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
+
   return (
     <div id="HomeContact">
       <div className="container">
@@ -56,44 +77,38 @@ const HomeContact = () => {
                 <br /> Get in touch!
               </p>
             </div>
-            <div className="HomeContactDec">
-              <p>
-              We specialize in Web Development, Software Development, <br />
-              and Digital Marketing — building brands for the modern web.
-              </p>
-            </div>
             <div className="HomeContactAdressBox">
-          <div className="AdressBox">
-            <div className="Iconbox">
-              <LuMapPin />
+              <div className="AdressBox">
+                <div className="Iconbox">
+                  <LuMapPin />
+                </div>
+                <div className="TextBox">
+                  <a
+                    href="https://www.google.com/maps/search/First+Floor+Vijo+Tower+Karukutty,+Erankulam,+Kochi,+India/@10.1000543,76.177041,45026m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    First Floor Vijo Tower Karukutty, Erankulam, Kochi, India
+                  </a>
+                </div>
+              </div>
+              <div className="AdressBox">
+                <div className="Iconbox">
+                  <LuPhoneCall />
+                </div>
+                <div className="TextBox">
+                  <a href="tel:+917012725965">+91 7012725965</a>
+                </div>
+              </div>
+              <div className="AdressBox">
+                <div className="Iconbox">
+                  <LuMail />
+                </div>
+                <div className="TextBox">
+                  <a href="mailto:varixialbs@gmail.com">varixialbs@gmail.com</a>
+                </div>
+              </div>
             </div>
-            <div className="TextBox">
-              <a
-                href="https://www.google.com/maps/search/First+Floor+Vijo+Tower+Karukutty,+Erankulam,+Kochi,+India/@10.1000543,76.177041,45026m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                First Floor Vijo Tower Karukutty, Erankulam, Kochi, India
-              </a>
-            </div>
-          </div>
-        <div className="AdressBox">
-          <div className="Iconbox">
-            <LuPhoneCall />
-          </div>
-          <div className="TextBox">
-            <a href="tel:+917012725965">+91 7012725965</a>
-          </div>
-        </div>
-        <div className="AdressBox">
-          <div className="Iconbox">
-            <LuMail />
-          </div>
-          <div className="TextBox">
-            <a href="mailto:varixialbs@gmail.com">varixialbs@gmail.com</a>
-          </div>
-        </div>
-       </div>
           </div>
           <div className="HomeContactRight">
             <div className="ContactForm">
@@ -107,9 +122,10 @@ const HomeContact = () => {
                     value={formData.name}
                     onChange={handleChange}
                   />
-                  {errors.name && <span className="errorText">{errors.name}</span>}
+                  {errors.name && (
+                    <span className="errorText">{errors.name}</span>
+                  )}
                 </div>
-
                 <div className={`ContactField ${errors.email ? "error" : ""}`}>
                   <LuMail className="fieldIcon" />
                   <input
@@ -119,9 +135,10 @@ const HomeContact = () => {
                     value={formData.email}
                     onChange={handleChange}
                   />
-                  {errors.email && <span className="errorText">{errors.email}</span>}
+                  {errors.email && (
+                    <span className="errorText">{errors.email}</span>
+                  )}
                 </div>
-
                 <div className={`ContactField ${errors.phone ? "error" : ""}`}>
                   <LuPhoneCall className="fieldIcon" />
                   <input
@@ -131,20 +148,39 @@ const HomeContact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                   />
-                  {errors.phone && <span className="errorText">{errors.phone}</span>}
+                  {errors.phone && (
+                    <span className="errorText">{errors.phone}</span>
+                  )}
                 </div>
-
-                <div className="ContactField">
-                  <LuInfo className="fieldIcon" />
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                  />
+                <div className="ContactField selectField">
+                  <div
+                   ref={dropdownRef}
+                    className={`customSelect ${isDropdownOpen ? "open" : ""}`}
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  >
+                    <div className="selectedOption">
+                      {formData.subject || "Select a Service"}
+                    </div>
+                    <LuChevronDown className="selectArrow" />
+                    {isDropdownOpen && (
+                      <ul className="dropdownMenu">
+                        {servicesList.map((service, i) => (
+                          <li
+                            key={i}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setFormData({ ...formData, subject: service });
+                              setIsDropdownOpen(false);
+                            }}
+                          >
+                            {service}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
-
+                ;
                 <div className="ContactField textareaField">
                   <LuPen className="fieldIcon" />
                   <textarea
@@ -154,8 +190,6 @@ const HomeContact = () => {
                     onChange={handleChange}
                   />
                 </div>
-
-
                 <div className="ContactBtn">
                   <button type="submit">
                     <LuSend />
@@ -168,14 +202,13 @@ const HomeContact = () => {
         </div>
       </div>
       <div className="ContactMap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.245655245865!2d54.37655467535857!3d24.476943878181537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e671d78753635%3A0x69fbce3421eedcf8!2sKalavardhini%20Arts%20Center%20L.L.C!5e0!3m2!1sen!2sin!4v1758427273722!5m2!1sen!2sin"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        {/* <MapEmbed /> */}
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.245655245865!2d54.37655467535857!3d24.476943878181537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e671d78753635%3A0x69fbce3421eedcf8!2sKalavardhini%20Arts%20Center%20L.L.C!5e0!3m2!1sen!2sin!4v1758427273722!5m2!1sen!2sin"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   );
 };

@@ -29,10 +29,8 @@ const HomeWork = () => {
     const section = sectionRef.current;
     const scrollContent = scrollRef.current;
 
-    // Cleanup existing triggers
     ScrollTrigger.getAll().forEach((t) => t.kill());
 
-    // Only use GSAP scroll on desktop (≥1025px)
     const mm = window.matchMedia("(min-width: 1025px)");
 
     if (mm.matches) {

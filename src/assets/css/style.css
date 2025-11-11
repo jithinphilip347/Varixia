@@ -59,6 +59,10 @@
   position: relative;
   letter-spacing: 1px;
 }
+#Nav .NavMain .NavLink ul li a {
+  text-decoration: none;
+  color: inherit;
+}
 #Nav .NavMain .NavLink ul li::after {
   content: "";
   position: absolute;
@@ -97,7 +101,13 @@
   align-items: center;
   gap: 10px;
 }
-#Nav .NavMain .NavContact p {
+#Nav .NavMain .NavContact a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Nav .NavMain .NavContact a p {
   font-size: 16px;
   color: #fff;
   font-family: myFont1;
@@ -107,23 +117,23 @@
   padding: 8px 12px;
   letter-spacing: 1px;
 }
-#Nav .NavMain .NavContact p:hover {
+#Nav .NavMain .NavContact a p:hover {
   background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 @media (max-width: 480px) {
-  #Nav .NavMain .NavContact p {
+  #Nav .NavMain .NavContact a p {
     padding: 0px 0px;
     font-size: 15px;
   }
 }
-#Nav .NavMain .NavContact svg {
+#Nav .NavMain .NavContact a svg {
   color: #fff;
   display: none;
 }
 @media (max-width: 1024px) {
-  #Nav .NavMain .NavContact svg {
+  #Nav .NavMain .NavContact a svg {
     display: block;
   }
 }
@@ -177,23 +187,32 @@
 #Sidenav .SidenavContent ul {
   list-style: none;
   padding: 0;
-  margin: 40px 0 0 0;
+  margin: 80px 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 #Sidenav .SidenavContent ul li {
   font-size: 64px;
   font-family: myFont1;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
   font-weight: 900;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
-#Sidenav .SidenavContent ul li:hover {
+#Sidenav .SidenavContent ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+#Sidenav .SidenavContent ul li a:hover {
   background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+#Sidenav .SidenavContent ul li:hover {
+  transform: translateX(8px);
 }
 
 #HomeBanner {
@@ -351,17 +370,20 @@
   gap: 100px;
   margin-bottom: 40px;
 }
-#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p, #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p {
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p,
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p {
   font-family: myFont1;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
 }
-#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p .fixed-color, #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .fixed-color {
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p .fixed-color,
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .fixed-color {
   color: #fff;
 }
-#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p .change-color, #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .change-color {
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .ArtsBox p .change-color,
+#HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .change-color {
   color: #d5d5d5;
 }
 #HomeBanner .BannerMain .BannerContent .DanceBannerBox .IndustryBox p .fixed-color {
@@ -408,20 +430,48 @@
   gap: 20px;
 }
 #HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a {
-  color: var(--primaryColor);
-  font-size: 18px;
-  transition: all 0.3s ease;
+  position: relative;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--primaryColor);
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 1px;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a svg {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  color: #05ddff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  display: block;
 }
 #HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a:hover {
-  color: var(--primaryColor);
-  border-color: var(--primaryColor);
+  transform: scale(1.1);
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a:hover::before {
+  filter: brightness(1.3);
+}
+#HomeBanner .BannerMain .BannerContent .BannerContact .SocialIconBox a:hover svg {
+  filter: drop-shadow(0 0 6px #00bdfa);
 }
 #HomeBanner .BannerMain .BannerContent .SlideArrows {
   display: none;
@@ -668,17 +718,25 @@
 @media (max-width: 1024px) {
   #HomeService .HomeServiceHead h2 {
     font-size: 60px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 768px) {
   #HomeService .HomeServiceHead h2 {
     font-size: 40px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 480px) {
   #HomeService .HomeServiceHead h2 {
     font-size: 30px;
+    margin-bottom: 0px;
   }
+}
+#HomeService .gradient-text {
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #HomeService .HomeServiceMain {
   display: flex;
@@ -717,18 +775,17 @@
 }
 #HomeService .ServiceBoxLeft h2 {
   width: 35%;
-  color: #555;
   font-size: 36px;
   transition: 0.3s;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   #HomeService .ServiceBoxLeft h2 {
+    width: 100%;
     font-size: 26px;
   }
 }
 #HomeService .ServiceBoxLeft p {
   width: 60%;
-  color: #555;
   font-size: 16px;
   max-width: 60%;
   overflow: hidden;
@@ -736,6 +793,15 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   transition: 0.3s;
+}
+@media (max-width: 768px) {
+  #HomeService .ServiceBoxLeft p {
+    width: 100%;
+    font-size: 15px;
+    max-width: 100%;
+    -webkit-line-clamp: inherit;
+    -webkit-box-orient: inherit;
+  }
 }
 #HomeService .ServiceImgBox {
   position: absolute;
@@ -779,6 +845,11 @@
   align-items: center;
   color: #555;
   transition: 0.3s;
+}
+@media (max-width: 768px) {
+  #HomeService .ServiceIconBox {
+    display: none;
+  }
 }
 #HomeService .ServiceIconBox .icon-hover {
   display: none;
@@ -1078,7 +1149,17 @@
 }
 #HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .Iconbox {
   font-size: 18px;
-  color: var(--primaryColor);
+}
+#HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .Iconbox svg {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  color: #05ddff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  display: block;
 }
 #HomeContact .HomeContactMain .HomeContactLeft .HomeContactAdressBox .AdressBox .TextBox a {
   text-decoration: none;
@@ -1132,7 +1213,7 @@
   align-items: flex-start;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactField .fieldIcon {
-  color: var(--primaryColor);
+  color: #05ddff;
   margin-right: 10px;
   font-size: 18px;
   flex-shrink: 0;
@@ -1185,7 +1266,7 @@
   gap: 10px;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField .fieldIcon {
-  color: var(--primaryColor);
+  color: #05ddff;
   font-size: 18px;
   margin-top: 12px;
 }
@@ -1211,30 +1292,129 @@
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField:hover, #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .textareaField:focus-within {
   border-color: #fff;
 }
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField {
+  position: relative;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect {
+  position: relative;
+  width: 100%;
+  padding: 10px 30px 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: myFont1;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #797979;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.3s ease;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect:hover, #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect.open {
+  border-color: #fff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect .selectedOption {
+  flex: 1;
+  color: #fff;
+  text-transform: capitalize;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect .selectArrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: #05ddff;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect.open .selectArrow {
+  transform: rotate(180deg);
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect .dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  margin-top: 8px;
+  list-style: none;
+  padding: 5px 0;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease forwards;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect .dropdownMenu li {
+  padding: 10px 15px;
+  font-size: 15px;
+  font-family: myFont1;
+  color: #d5d5d5;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .selectField .customSelect .dropdownMenu li:hover {
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 20px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn {
   width: 100%;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button {
+  position: relative;
   background: #000;
-  border: 1px solid var(--primaryColor);
+  border: none;
   outline: none;
   padding: 12px 20px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button svg {
-  color: var(--primaryColor);
+  color: #05ddff;
   font-size: 20px;
+  position: relative;
+  z-index: 1;
 }
 #HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button p {
-  color: var(--primaryColor);
   font-size: 16px;
   font-weight: 400;
   font-family: myFont1;
   text-transform: capitalize;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button:hover {
+  transform: scale(1.05);
+}
+#HomeContact .HomeContactMain .HomeContactRight .ContactForm form .ContactBtn button:hover::before {
+  filter: brightness(1.3);
 }
 #HomeContact .ContactMap {
   width: 100%;
@@ -1269,7 +1449,6 @@
   margin-bottom: 40px;
   position: relative;
   padding-bottom: 40px;
-  /* gradient divider line */
 }
 #Footer .FooterSection1::after {
   content: "";
@@ -1349,25 +1528,50 @@
 #Footer .FooterSection2 .FooterSocialIcon {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 #Footer .FooterSection2 .FooterSocialIcon a {
-  width: 35px;
-  height: 35px;
-  border: 1px solid var(--primaryColor) !important;
-  border-radius: 50%;
+  position: relative;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primaryColor) !important;
+  border-radius: 50%;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
-#Footer .FooterSection2 .FooterSocialIcon a:hover {
-  border-color: var(--primaryColor) !important;
-  color: var(--primaryColor) !important;
+#Footer .FooterSection2 .FooterSocialIcon a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 1px;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
 }
 #Footer .FooterSection2 .FooterSocialIcon a svg {
-  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  color: #05ddff;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  display: block;
+}
+#Footer .FooterSection2 .FooterSocialIcon a:hover {
+  transform: scale(1.1);
+}
+#Footer .FooterSection2 .FooterSocialIcon a:hover::before {
+  filter: brightness(1.3);
+}
+#Footer .FooterSection2 .FooterSocialIcon a:hover svg {
+  filter: drop-shadow(0 0 6px #00bdfa);
 }
 
 .cursor-outer {
@@ -1388,6 +1592,11 @@
   background-origin: border-box;
   background-clip: border-box;
   transition: background-color 0.3s, transform 0.3s;
+}
+@media (max-width: 1024px) {
+  .cursor-outer {
+    display: none;
+  }
 }
 .cursor-outer::before {
   content: "";
@@ -1414,6 +1623,11 @@
   line-height: 1.2;
   transition: opacity 0.3s ease;
 }
+@media (max-width: 1024px) {
+  .cursor-text {
+    display: none;
+  }
+}
 
 .cursor-inner {
   position: fixed;
@@ -1427,6 +1641,11 @@
   z-index: 10000;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
+}
+@media (max-width: 1024px) {
+  .cursor-inner {
+    display: none;
+  }
 }
 
 .scroll-whatsapp-container {

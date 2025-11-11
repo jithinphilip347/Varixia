@@ -4,17 +4,43 @@ import React from "react";
 import { MdClose } from "react-icons/md";
 
 const Sidenav = ({ isOpen, onClose }) => {
+  const handleScrollToSection = (id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      const offset = 80; // adjust for fixed navbar height
+      const topPosition = section.offsetTop - offset;
+      window.scrollTo({ top: topPosition, behavior: "smooth" });
+      onClose(); // close sidenav after clicking
+    }
+  };
+
+  const menuItems = [
+    { name: "Home", link: "#HomeBanner" },
+    { name: "About", link: "#HomeAbout" },
+    { name: "Service", link: "#HomeService" },
+    { name: "Contact", link: "#HomeContact" },
+  ];
+
   return (
     <div id="Sidenav" className={isOpen ? "open" : ""}>
       <div className="SidenavContent">
         {/* Close Icon */}
         <MdClose className="closeIcon" onClick={onClose} />
-        
+
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Service</li>
-          <li>Gallery</li>
+          {menuItems.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.link}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScrollToSection(item.link);
+                }}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
