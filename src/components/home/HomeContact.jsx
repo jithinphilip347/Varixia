@@ -39,19 +39,43 @@ const HomeContact = () => {
     "Others",
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let newErrors = {};
-    if (!formData.name) newErrors.name = "Name is required";
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.phone) newErrors.phone = "Phone is required";
-    if (!formData.message) newErrors.message = "Message is required";
-    setErrors(newErrors);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  let newErrors = {};
+  if (!formData.name) newErrors.name = "Name is required";
+  if (!formData.email) newErrors.email = "Email is required";
+  if (!formData.phone) newErrors.phone = "Phone is required";
+  if (!formData.message) newErrors.message = "Message is required";
+  setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      console.log("Form Submitted:", formData);
+  if (Object.keys(newErrors).length !== 0) return;
+
+  try {
+    const res = await fetch("/api/sendmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      
     }
-  };
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
+
 
   useEffect(() => {
   const handleClickOutside = (e) => {
