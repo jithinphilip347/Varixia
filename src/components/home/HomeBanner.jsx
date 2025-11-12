@@ -44,7 +44,7 @@ const HomeBanner = () => {
   //       stagger: 0.1,
   //       onComplete: () => {
   //         gsap.fromTo(
-  //           bannerContentRef.current.children,
+  //           bannerContenftRef.current.children,
   //           { opacity: 0, x: 100 },
   //           { opacity: 1, x: 0, duration: 0.6, stagger: 0.1 }
   //         );

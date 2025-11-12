@@ -14,11 +14,11 @@ import Project5 from "../../../public/images/project5.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { id: 1, image: Project1, name: "Project 1", desc: "Lorem ipsum dolor sit amet." },
-  { id: 2, image: Project2, name: "Project 2", desc: "Consectetur adipiscing elit." },
-  { id: 3, image: Project3, name: "Project 3", desc: "Sed do eiusmod tempor incididunt." },
-  { id: 4, image: Project4, name: "Project 4", desc: "Ut labore et dolore magna aliqua." },
-  { id: 5, image: Project5, name: "Project 5", desc: "Duis aute irure dolor in reprehenderit." },
+  { id: 1, image: '/images/project1.webp', name: "Project 1", desc: "Lorem ipsum dolor sit amet." },
+  { id: 2, image: '/images/project1.webp', name: "Project 2", desc: "Consectetur adipiscing elit." },
+  { id: 3, image: '/images/project1.webp', name: "Project 3", desc: "Sed do eiusmod tempor incididunt." },
+  { id: 4, image: '/images/project1.webp', name: "Project 4", desc: "Ut labore et dolore magna aliqua." },
+  { id: 5, image: '/images/project1.webp', name: "Project 5", desc: "Duis aute irure dolor in reprehenderit." },
 ];
 
 const HomeWork = () => {
@@ -65,7 +65,7 @@ const HomeWork = () => {
         {projects.map((project) => (
           <div key={project.id} className="HomeWorkCard">
             <div className="HomeWorkImgBox">
-              <Image
+              <img
                 src={project.image}
                 alt={project.name}
                 fill

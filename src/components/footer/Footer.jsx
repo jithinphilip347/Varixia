@@ -102,7 +102,7 @@ const Footer = () => {
 
           <div className="FooterSection2">
             <div className="FooterLogo">
-              <Image src={FooterLogo} alt="Varixia Logo" />
+              <img src='/images/footer-logo.png' alt="Varixia Logo" />
             </div>
 
             {/* <div className="FooterSocialIcon">

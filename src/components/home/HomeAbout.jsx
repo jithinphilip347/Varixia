@@ -41,7 +41,7 @@ const HomeAbout = () => {
           <div className="HomeAboutSection HomeAboutSection1">
             <div className="HomeAboutLeft">
               <div className="HomeAboutImg">
-                <Image src={About1} alt="About Image" />
+                <img src='/images/about-1.png' alt="About Image" />
               </div>
             </div>
             <div className="HomeAboutRight fade-right">
@@ -72,7 +72,7 @@ const HomeAbout = () => {
             </div>
             <div className="HomeAboutRight">
               <div className="HomeAboutImg">
-                <Image src={About2} alt="About Image" />
+                <img src='/images/about-2.jpg' alt="About Image" />
               </div>
             </div>
           </div>

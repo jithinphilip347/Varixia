@@ -10,25 +10,25 @@ const services = [
     id: 1,
     title: "Web Development",
     desc: "Crafting responsive, high-performance websites with cutting-edge technologies and modern design principles.",
-    img: ServiceImage,
+    img: '/images/ui.webp',
   },
   {
     id: 2,
     title: "App Development",
     desc: "Building native and cross-platform mobile applications that deliver exceptional user experiences.",
-    img: ServiceImage,
+    img: '/images/ui.webp',
   },
   {
     id: 3,
     title: "Software Development",
     desc: "Developing robust, scalable software solutions tailored to your business needs and objectives.",
-    img: ServiceImage,
+    img: '/images/ui.webp',
   },
   {
     id: 4,
     title: "Digital Marketing",
     desc: "Amplifying your brand presence with data-driven strategies and creative marketing campaigns.",
-    img: ServiceImage,
+    img: '/images/ui.webp',
   },
 
 ];
@@ -118,7 +118,7 @@ const handleMouseLeave = (index) => {
               </div>
 
               <div className="ServiceImgBox" ref={(el) => addRefs(imgRefs, el)}>
-                <Image src={item.img} alt={item.title} fill />
+                <img src={item.img} alt={item.title} fill />
               </div>
 
               <div className="ServiceIconBox" ref={(el) => addRefs(iconRefs, el)}>
