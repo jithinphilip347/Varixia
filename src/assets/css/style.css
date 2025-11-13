@@ -584,8 +584,8 @@
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection1 {
   border-bottom: 2px solid transparent;
-  -o-border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
-     border-image: linear-gradient(180deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
+  -o-border-image: linear-gradient(90deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
+     border-image: linear-gradient(90deg, #05ddff, #00bdfa, #008efa, #0069f7, #003ffa) 1;
 }
 #HomeAbout .HomeAboutMain .HomeAboutSection1 .HomeAboutLeft {
   flex: 0 0 35%;
@@ -819,7 +819,6 @@
   flex-direction: column;
   justify-content: center;
   padding: 80px 40px;
-  /* Horizontal GSAP scroll on desktop */
 }
 @media (max-width: 1024px) {
   #HomeWork {
@@ -864,12 +863,10 @@
 #HomeWork .HomeWorkScroll {
   display: flex;
   align-items: center;
-  height: 100%;
   gap: 50px;
   padding: 0;
   margin: 0;
   will-change: transform;
-  /* Responsive - switch to manual horizontal scroll */
 }
 @media (max-width: 1024px) {
   #HomeWork .HomeWorkScroll {
@@ -887,7 +884,6 @@
 #HomeWork .HomeWorkCard {
   flex: 0 0 35vw;
   min-width: 340px;
-  height: 70vh;
   background: #111;
   border-radius: 20px;
   overflow: hidden;
@@ -899,25 +895,21 @@
 @media (max-width: 1024px) {
   #HomeWork .HomeWorkCard {
     flex: 0 0 70%;
-    height: 60vh;
   }
 }
 @media (max-width: 768px) {
   #HomeWork .HomeWorkCard {
     flex: 0 0 85%;
-    height: 55vh;
   }
 }
 @media (max-width: 480px) {
   #HomeWork .HomeWorkCard {
     flex: 0 0 90%;
-    height: 50vh;
   }
 }
 #HomeWork .HomeWorkCard .HomeWorkImgBox {
   position: relative;
   width: 100%;
-  height: 60%;
   overflow: hidden;
 }
 #HomeWork .HomeWorkCard .HomeWorkImgBox img {
@@ -937,6 +929,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 15px;
 }
 #HomeWork .HomeWorkCard .HomeWorkDetails h3 {
   font-size: 22px;

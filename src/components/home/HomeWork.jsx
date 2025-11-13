@@ -5,20 +5,16 @@ import { HiArrowUpRight } from "react-icons/hi2";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Project1 from "../../../public/images/project1.webp";
-import Project2 from "../../../public/images/project2.webp";
-import Project3 from "../../../public/images/project3.webp";
-import Project4 from "../../../public/images/project4.webp";
-import Project5 from "../../../public/images/project5.webp";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { id: 1, image: '/images/project1.webp', name: "Project 1", desc: "Lorem ipsum dolor sit amet." },
-  { id: 2, image: '/images/project1.webp', name: "Project 2", desc: "Consectetur adipiscing elit." },
-  { id: 3, image: '/images/project1.webp', name: "Project 3", desc: "Sed do eiusmod tempor incididunt." },
-  { id: 4, image: '/images/project1.webp', name: "Project 4", desc: "Ut labore et dolore magna aliqua." },
-  { id: 5, image: '/images/project1.webp', name: "Project 5", desc: "Duis aute irure dolor in reprehenderit." },
+    { id: 1, image: '/images/Apex-gym.png', name: "Apex Gym", desc: "A modern fitness website designed for a premium gym, featuring training programs, membership plans, and trainer profiles." },
+  { id: 2, image: '/images/club-travex.png', name: "Club Travex", desc: "A dynamic travel booking platform showcasing international tour packages, destination highlights, and seamless inquiry options." },
+  { id: 3, image: '/images/yogify.png', name: "Yogify", desc: "An ecommerce website offering spiritual products including Rudraksha malas, meditation accessories, and wellness essentials." },
+  { id: 4, image: '/images/gcc.png', name: "GCC Academy", desc: "A coaching institute website providing MOH, DHA, HAAD exam training with course details, schedules, and expert medical faculty." },
+  { id: 5, image: '/images/xkeiwellness.png', name: "XKEI Wellness", desc: "A fitness and nutrition guidance platform offering personalized diet plans, workout routines, and wellness consulting." },
+    { id: 6, image: '/images/xkeiwellnessstore.png', name: "XKEI Wellness Store", desc: "An online store specializing in protein powders, gym supplements, and fitness nutrition products." },
+
 ];
 
 const HomeWork = () => {

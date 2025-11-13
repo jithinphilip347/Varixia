@@ -59,15 +59,12 @@ const HomeService = () => {
   }, []);
 
   const handleMouseEnter = (index) => {
-  // Animate scale
   gsap.to(titleRefs.current[index], { scale: 1.05, duration: 0.3, ease: "power2.out" });
   gsap.to(descRefs.current[index], { color: "#fff", duration: 0.3 });
   gsap.to(iconRefs.current[index], { borderColor: "#fff", color: "#fff", duration: 0.3 });
 
-  // Apply gradient text effect
   titleRefs.current[index].classList.add("gradient-text");
 
-  // Image animation
   gsap.to(imgRefs.current[index], {
     x: 0,
     autoAlpha: 1,
