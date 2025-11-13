@@ -39,7 +39,7 @@ const HomeContact = () => {
     "Others",
   ];
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw93w8FeuO9AU2rBVFyzWwds8SyDFVFqf0SR6cUJr2nly9Tqdl6d7k8CfHcqYnTOcc6Ew/exec";
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzLW98FElbiXatgPvcZ3g6V14mDJophQoIgcRjq0hnAfuvFMIeUzYlg_B1wd4Si9yEQCw/exec";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,22 +48,20 @@ const HomeContact = () => {
     if (!formData.name) newErrors.name = "Name is required";
     if (!formData.email) newErrors.email = "Email is required";
     if (!formData.phone) newErrors.phone = "Phone is required";
-    if (!formData.message) newErrors.message = "Message is required";
+
 
     setErrors(newErrors);
     if (Object.keys(newErrors).length !== 0) return;
 
     try {
+      
       const res = await fetch(GOOGLE_SHEET_URL, {
         method: "POST",
         body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
       });
 
       const data = await res.json();
-
+      console.log(data)
       if (data.success) {
 
         setFormData({
@@ -76,6 +74,13 @@ const HomeContact = () => {
       } else {
       }
     } catch (error) {
+      setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
       console.log("Error:", error);
     }
   };
