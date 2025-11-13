@@ -39,42 +39,47 @@ const HomeContact = () => {
     "Others",
   ];
 
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw93w8FeuO9AU2rBVFyzWwds8SyDFVFqf0SR6cUJr2nly9Tqdl6d7k8CfHcqYnTOcc6Ew/exec";
+
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  let newErrors = {};
-  if (!formData.name) newErrors.name = "Name is required";
-  if (!formData.email) newErrors.email = "Email is required";
-  if (!formData.phone) newErrors.phone = "Phone is required";
-  if (!formData.message) newErrors.message = "Message is required";
-  setErrors(newErrors);
+    e.preventDefault();
 
-  if (Object.keys(newErrors).length !== 0) return;
+    let newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.phone) newErrors.phone = "Phone is required";
+    if (!formData.message) newErrors.message = "Message is required";
 
-  try {
-    const res = await fetch("/api/sendmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length !== 0) return;
 
-    const data = await res.json();
-    if (data.success) {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+    try {
+      const res = await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
-    } else {
-      
+
+      const data = await res.json();
+
+      if (data.success) {
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+      }
+    } catch (error) {
+      console.log("Error:", error);
     }
-  } catch (error) {
-    console.log("Error:", error);
-  }
-};
+  };
+
 
 
   useEffect(() => {
