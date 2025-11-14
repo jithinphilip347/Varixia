@@ -20,6 +20,7 @@ const HomeContact = () => {
     subject: "",
     message: "",
   });
+  const [issubmiting,setIssubmitting] = useState(false);
 
   const [errors, setErrors] = useState({});
   const dropdownRef = useRef();
@@ -43,7 +44,7 @@ const HomeContact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIssubmitting(true)
     let newErrors = {};
     if (!formData.name) newErrors.name = "Name is required";
     if (!formData.email) newErrors.email = "Email is required";
@@ -73,7 +74,9 @@ const HomeContact = () => {
         });
       } else {
       }
+      setIssubmitting(false)
     } catch (error) {
+      setIssubmitting(false)
       setFormData({
           name: "",
           email: "",
@@ -224,10 +227,24 @@ const HomeContact = () => {
                   />
                 </div>
                 <div className="ContactBtn">
-                  <button type="submit">
-                    <LuSend />
-                    <p>Get in Touch</p>
+                  <button 
+                    type="submit" 
+                    disabled={issubmiting}
+                    className="contactSubmitBtn"
+                  >
+                    {issubmiting ? (
+                      <>
+                        <span className="loader"></span>
+                        <p>Sending...</p>
+                      </>
+                    ) : (
+                      <>
+                        <LuSend />
+                        <p>Get in Touch</p>
+                      </>
+                    )}
                   </button>
+
                 </div>
               </form>
             </div>
