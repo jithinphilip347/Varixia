@@ -23,7 +23,6 @@ const Footer = () => {
       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
     );
 
-    // Button hover animation
     if (buttonRef.current) {
       const el = buttonRef.current;
       el.addEventListener("mouseenter", () => {
@@ -43,27 +42,6 @@ const Footer = () => {
         });
       });
     }
-
-    // socialIconsRef.current.forEach((icon) => {
-    //   if (icon) {
-    //     icon.addEventListener("mouseenter", () => {
-    //       gsap.to(icon, {
-    //         borderColor: "#05ddff",
-    //         color: "#05ddff",
-    //         duration: 0.3,
-    //         ease: "power2.out",
-    //       });
-    //     });
-    //     icon.addEventListener("mouseleave", () => {
-    //       gsap.to(icon, {
-    //         borderColor: "#d5d5d5",
-    //         color: "#fff",
-    //         duration: 0.3,
-    //         ease: "power2.out",
-    //       });
-    //     });
-    //   }
-    // });
   }, []);
 
   return (
@@ -104,36 +82,6 @@ const Footer = () => {
             <div className="FooterLogo">
               <img src='/images/footer-logo.png' alt="Varixia Logo" />
             </div>
-
-            {/* <div className="FooterSocialIcon">
-              <a
-                href="https://www.instagram.com/varixialabs/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                ref={(el) => (socialIconsRef.current[0] = el)}
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="http://facebook.com/profile.php?id=61581803855154&sk=about"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                ref={(el) => (socialIconsRef.current[1] = el)}
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/varixia-advanced-tech-lab/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                ref={(el) => (socialIconsRef.current[2] = el)}
-              >
-                <FaLinkedinIn />
-              </a>
-            </div> */}
             <div className="FooterSocialIcon">
               <a
                 href="https://www.instagram.com/varixialabs/"

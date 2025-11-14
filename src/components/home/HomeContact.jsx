@@ -214,7 +214,6 @@ const HomeContact = () => {
                     )}
                   </div>
                 </div>
-                ;
                 <div className="ContactField textareaField">
                   <LuPen className="fieldIcon" />
                   <textarea
@@ -237,7 +236,7 @@ const HomeContact = () => {
       </div>
       <div className="ContactMap">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3062.378061272568!2d76.37095207503427!3d10.230265989887211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDEzJzQ5LjAiTiA3NsKwMjInMjQuNyJF!5e1!3m2!1sen!2sin!4v1762859513771!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.387257875017!2d76.37053447368817!3d10.230317769032004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0806ba4ae253d7%3A0x60800ece4fad49b6!2s69JF%2B46H%2C%20Karukutty%2C%20Kerala!5e0!3m2!1sen!2sin!4v1763120906963!5m2!1sen!2sin"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
