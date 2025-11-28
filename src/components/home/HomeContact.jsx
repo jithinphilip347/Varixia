@@ -142,7 +142,7 @@ const HomeContact = () => {
                   <LuMail />
                 </div>
                 <div className="TextBox">
-                  <a href="mailto:varixialbs@gmail.com">varixialbs@gmail.com</a>
+                  <a href="mailto:varixialabs@gmail.com">varixialabs@gmail.com</a>
                 </div>
               </div>
             </div>
