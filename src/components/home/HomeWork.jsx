@@ -91,7 +91,7 @@ const HomeWork = () => {
         {projects.map((project) => (
           <div key={project.id} className="HomeWorkCard">
             <div className="HomeWorkImgBox">
-              <img
+              <Image
                 src={project.image}
                 alt={project.name}
                 fill

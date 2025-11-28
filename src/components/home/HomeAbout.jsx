@@ -41,7 +41,7 @@ const HomeAbout = () => {
           <div className="HomeAboutSection HomeAboutSection1">
             <div className="HomeAboutLeft">
               <div className="HomeAboutImg">
-                <img src='/images/about-1.png' alt="About Image" />
+                <Image src='/images/about-1.png' alt="About Image" width={100} height={100}  unoptimized={true} />
               </div>
             </div>
             <div className="HomeAboutRight fade-right">
@@ -72,7 +72,7 @@ const HomeAbout = () => {
             </div>
             <div className="HomeAboutRight">
               <div className="HomeAboutImg">
-                <img src='/images/about-2.jpg' alt="About Image" />
+                <Image src='/images/about-2.jpg' alt="About Image" width={100} height={100} unoptimized={true} />
               </div>
             </div>
           </div>

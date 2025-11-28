@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="container">
           <div className="NavMain">
             <div className="NavLogo">
-              <img src='/images/logo.png' alt="Logo" />
+              <Image src='/images/logo.png' alt="Logo" width={100} height={100} />
             </div>
 
             <div className="NavLink">

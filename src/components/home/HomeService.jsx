@@ -115,7 +115,7 @@ const handleMouseLeave = (index) => {
               </div>
 
               <div className="ServiceImgBox" ref={(el) => addRefs(imgRefs, el)}>
-                <img src={item.img} alt={item.title} fill />
+                <Image src={item.img} alt={item.title} fill />
               </div>
 
               <div className="ServiceIconBox" ref={(el) => addRefs(iconRefs, el)}>
