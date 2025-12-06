@@ -4,6 +4,12 @@ import HomeContact from "@/components/home/HomeContact";
 import HomeService from "@/components/home/HomeService";
 import HomeWork from "@/components/home/HomeWork";
 
+export const metadata = {
+  verification: {
+    google: "qLW6AghHvA83FQP13m740qPwopRIDSlv6L94EelVggg",
+  },
+};
+
 export default function Home() {
   return (
     <div>
@@ -12,7 +18,6 @@ export default function Home() {
       <HomeService />
       <HomeWork />
       <HomeContact />
-      
     </div>
   );
 }
