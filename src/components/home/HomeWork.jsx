@@ -12,39 +12,46 @@ const projects = [
     id: 1,
     image: "/images/Apex-gym.png",
     name: "Apex Gym",
-    desc: "A modern fitness website designed for a premium gym, featuring training programs, membership plans, and trainer profiles.",
+    desc: "A modern fitness website designed for a premium gym...",
+    link: "https://apex.xkeiwellness.com/"
   },
   {
     id: 2,
     image: "/images/club-travex.png",
     name: "Club Travex",
-    desc: "A dynamic travel booking platform showcasing international tour packages, destination highlights, and seamless inquiry options.",
+    desc: "A dynamic travel booking platform...",
+    link: "https://clubtravex.com/"
   },
   {
     id: 3,
     image: "/images/yogify.png",
     name: "Yogify",
-    desc: "An ecommerce website offering spiritual products including Rudraksha malas, meditation accessories, and wellness essentials.",
+    desc: "Ecommerce website offering spiritual products...",
+    link: "https://yogiandyathra.com/"
   },
   {
     id: 4,
     image: "/images/gcc.png",
     name: "GCC Academy",
-    desc: "A coaching institute website providing MOH, DHA, HAAD exam training with course details, schedules, and expert medical faculty.",
+    desc: "Medical exam coaching institute website...",
+    link: "https://gccacademy.net"
   },
   {
     id: 5,
     image: "/images/xkeiwellness.png",
     name: "XKEI Wellness",
-    desc: "A fitness and nutrition guidance platform offering personalized diet plans, workout routines, and wellness consulting.",
+    desc: "Fitness & wellness consulting platform...",
+    link: "https://xkeiwellness.com"
   },
   {
     id: 6,
     image: "/images/xkeiwellnessstore.png",
     name: "XKEI Wellness Store",
-    desc: "An online store specializing in protein powders, gym supplements, and fitness nutrition products.",
+    desc: "Online store for gym supplements...",
+    link: "https://store.xkeiwellness.com/"
   },
 ];
+
 
 const HomeWork = () => {
   const sectionRef = useRef(null);
@@ -103,10 +110,15 @@ const HomeWork = () => {
             <div className="HomeWorkDetails">
               <h3>{project.name}</h3>
               <p>{project.desc}</p>
-              <div className="viewButton">
+               <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="viewButton"
+              >
                 <span>View Website</span>
                 <HiArrowUpRight />
-              </div>
+              </a>
             </div>
           </div>
         ))}
