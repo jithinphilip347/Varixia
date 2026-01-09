@@ -80,7 +80,7 @@ const Footer = () => {
 
           <div className="FooterSection2">
             <div className="FooterLogo">
-              <Image src='/images/footer-logo.png' alt="Varixia Logo" width={100} height={100} />
+              <Image src='/images/footer-logo.png' alt="Varixia Logo" width={100} height={100} placeholder="empty"/>
             </div>
             <div className="FooterSocialIcon">
               <a

@@ -1,10 +1,15 @@
 import React from 'react'
 import BlogList from './BlogList'
+import blogApi from '@/libs/blogApi'
 
-const page = () => {
+const { getBlogs } = blogApi();
+
+const page = async () => {
+
+  const blogs = await getBlogs();
   return (
     <div>
-        <BlogList />
+        <BlogList blogs={blogs}/>
     </div>
   )
 }

@@ -4,21 +4,21 @@ import HomeBlog from "@/components/home/HomeBlog";
 import HomeContact from "@/components/home/HomeContact";
 import HomeService from "@/components/home/HomeService";
 import HomeWork from "@/components/home/HomeWork";
+import blogApi from "@/libs/blogApi";
 
-export const metadata = {
-  verification: {
-    google: "qLW6AghHvA83FQP13m740qPwopRIDSlv6L94EelVggg",
-  },
-};
+const { getBlogs } = blogApi();
 
-export default function Home() {
+
+
+export default async function Home() {
+  const blogs = await getBlogs();
   return (
     <div>
       <HomeBanner />
       <HomeAbout />
       <HomeService />
       <HomeWork />
-      <HomeBlog />
+      <HomeBlog blogs={blogs}/>
       <HomeContact />
     </div>
   );

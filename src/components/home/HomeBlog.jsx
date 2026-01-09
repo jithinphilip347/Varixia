@@ -8,39 +8,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import blogImg1 from '../../../public/images/blog1.jpg'; 
 import Link from 'next/link';
+import { MEDIA_BASE_URL } from '@/utils/constants';
 // import { Link } from 'react-router-dom';
 
-const HomeBlog = () => {
-  const blogData = [
-    {
-      id: 1,
-      image: blogImg1,
-      category: 'Creativity',
-      title: 'Scaling Smart: How Small Brands Can Win Big',
-      description: 'Master the fundamentals of Generative AI in just one day...'
-    },
-    {
-      id: 2,
-      image: blogImg1,
-      category: 'Marketing',
-      title: 'Digital Marketing Trends in 2024',
-      description: 'Explore how brands are evolving in the digital landscape...'
-    },
-    {
-      id: 3,
-      image: blogImg1,
-      category: 'Design',
-      title: 'The Future of UI/UX Design',
-      description: 'Learn how to simplify and harness the power of modern design...'
-    },
-        {
-      id: 4,
-      image: blogImg1,
-      category: 'Design',
-      title: 'The Future of UI/UX Design',
-      description: 'Learn how to simplify and harness the power of modern design...'
-    }
-  ];
+const HomeBlog = ({ blogs }) => {
+  
 
   return (
   <div id='HomeBlog' style={{ backgroundColor: '#000' }}>
@@ -66,13 +38,17 @@ const HomeBlog = () => {
             1280: { slidesPerView: 3 } 
           }}
         >
-          {blogData.map((blog) => (
+          {blogs.data.map((blog) => (
             <SwiperSlide key={blog.id} style={{ height: 'auto' }}>
+              
               <BlogBox 
-                image={blog.image}
-                category={blog.category}
-                title={blog.title}
-                description={blog.description}
+                id={blog.id}
+                slug={blog.slug}
+                image={MEDIA_BASE_URL +  blog.resource}
+                imageAlt={blog.image_alt}
+                category={"BLOG"}
+                title={blog.name}
+                description={blog.short_description}
               />
             </SwiperSlide>
           ))}
