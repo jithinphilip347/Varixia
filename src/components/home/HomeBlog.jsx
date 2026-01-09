@@ -10,7 +10,7 @@ import blogImg1 from '../../../public/images/blog1.jpg';
 import Link from 'next/link';
 import { MEDIA_BASE_URL } from '@/utils/constants';
 // import { Link } from 'react-router-dom';
-
+import NoData from '../../../public/images/no-data.jpg'
 const HomeBlog = ({ blogs }) => {
   
 
@@ -25,7 +25,7 @@ const HomeBlog = ({ blogs }) => {
         View All
       </Link>
     </div>
-        <Swiper
+        {/* <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={25} 
           slidesPerView={1}
@@ -52,7 +52,44 @@ const HomeBlog = ({ blogs }) => {
               />
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
+        {blogs && blogs.data && blogs.data.length > 0 ? (
+  <Swiper
+    modules={[Pagination, Autoplay]}
+    spaceBetween={25}
+    slidesPerView={1}
+    pagination={{ clickable: true }}
+    autoplay={{ delay: 4000 }}
+    style={{ paddingBottom: '50px' }}
+    breakpoints={{
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+      1280: { slidesPerView: 3 }
+    }}
+  >
+    {blogs.data.map((blog) => (
+      <SwiperSlide key={blog.id} style={{ height: 'auto' }}>
+        <BlogBox
+          id={blog.id}
+          slug={blog.slug}
+          image={MEDIA_BASE_URL + blog.resource}
+          imageAlt={blog.image_alt}
+          category={"BLOG"}
+          title={blog.name}
+          description={blog.short_description}
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+) : (
+  <div className="NoDataContainer">
+    <div className="NoDataContent">
+      <img src={NoData} alt="No Blogs Found" className="NoDataImg" />
+      <h3>No Blogs Found</h3>
+      <p>We haven't posted any stories yet. Please check back later for updates!</p>
+    </div>
+  </div>
+)}
       </div>
     </div>
   );

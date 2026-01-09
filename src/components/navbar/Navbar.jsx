@@ -1,20 +1,110 @@
+// "use client";
+
+// import React, { useState, useEffect } from "react";
+// import Logo from "../../../public/images/logo.png";
+// import Image from "next/image";
+// import { VscMenu } from "react-icons/vsc";
+// import Sidenav from "./Sidenav";
+
+// const Navbar = () => {
+//   const [activeItem, setActiveItem] = useState("Home");
+//   const [scrolled, setScrolled] = useState(false);
+//   const [sidenavOpen, setSidenavOpen] = useState(false);
+
+//   const menuItems = [
+//     { name: "Home", link: "#HomeBanner" },
+//     { name: "About", link: "#HomeAbout" },
+//     { name: "Service", link: "#HomeService" },
+//     { name: "Blogs", link: "/blog" },
+//   ];
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 50);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const handleScrollToSection = (id, name) => {
+//     setActiveItem(name);
+//     const section = document.querySelector(id);
+//     if (section) {
+//       const offset = 80; 
+//       const topPosition = section.offsetTop - offset;
+//       window.scrollTo({ top: topPosition, behavior: "smooth" });
+//     }
+//   };
+
+//   return (
+//     <>
+//       <div id="Nav" className={scrolled ? "scrolled" : ""}>
+//         <div className="container">
+//           <div className="NavMain">
+//             <div className="NavLogo">
+//               <Image src='/images/logo.png' alt="Logo" width={100} height={100} />
+//             </div>
+
+//             <div className="NavLink">
+//               <ul>
+//                 {menuItems.map((item) => (
+//                   <li
+//                     key={item.name}
+//                     className={activeItem === item.name ? "active" : ""}
+//                   >
+//                     <a
+//                       href={item.link}
+//                       onClick={(e) => {
+//                         e.preventDefault(); 
+//                         handleScrollToSection(item.link, item.name);
+//                       }}
+//                     >
+//                       {item.name}
+//                     </a>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </div>
+
+//             <div className="NavContact">
+//               <a href="#HomeContact">
+//               <p>Let's Talk</p>
+//               <VscMenu onClick={() => setSidenavOpen(true)} />
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       <Sidenav isOpen={sidenavOpen} onClose={() => setSidenavOpen(false)} />
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Logo from "../../../public/images/logo.png";
 import Image from "next/image";
+import Link from "next/link"; 
 import { VscMenu } from "react-icons/vsc";
 import Sidenav from "./Sidenav";
+import { usePathname, useRouter } from "next/navigation"; 
 
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
   const [sidenavOpen, setSidenavOpen] = useState(false);
+  
+  const pathname = usePathname();
+  const router = useRouter();
 
   const menuItems = [
-    { name: "Home", link: "#HomeBanner" },
-    { name: "About", link: "#HomeAbout" },
-    { name: "Service", link: "#HomeService" },
+    { name: "Home", link: "/", isHash: true, targetId: "#HomeBanner" },
+    { name: "About", link: "/#HomeAbout", isHash: true, targetId: "#HomeAbout" },
+    { name: "Service", link: "/#HomeService", isHash: true, targetId: "#HomeService" },
+    { name: "Blogs", link: "/blog", isHash: false },
   ];
 
   useEffect(() => {
@@ -25,13 +115,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScrollToSection = (id, name) => {
-    setActiveItem(name);
-    const section = document.querySelector(id);
-    if (section) {
-      const offset = 80; 
-      const topPosition = section.offsetTop - offset;
-      window.scrollTo({ top: topPosition, behavior: "smooth" });
+  const handleNavClick = (e, item) => {
+    setActiveItem(item.name);
+
+    if (item.isHash && pathname === "/") {
+      e.preventDefault();
+      const section = document.querySelector(item.targetId);
+      if (section) {
+        const offset = 80;
+        const topPosition = section.offsetTop - offset;
+        window.scrollTo({ top: topPosition, behavior: "smooth" });
+      }
     }
   };
 
@@ -41,7 +135,9 @@ const Navbar = () => {
         <div className="container">
           <div className="NavMain">
             <div className="NavLogo">
-              <Image src='/images/logo.png' alt="Logo" width={100} height={100} />
+              <Link href="/">
+                <Image src='/images/logo.png' alt="Logo" width={100} height={100} />
+              </Link>
             </div>
 
             <div className="NavLink">
@@ -51,24 +147,21 @@ const Navbar = () => {
                     key={item.name}
                     className={activeItem === item.name ? "active" : ""}
                   >
-                    <a
+                    <Link
                       href={item.link}
-                      onClick={(e) => {
-                        e.preventDefault(); 
-                        handleScrollToSection(item.link, item.name);
-                      }}
+                      onClick={(e) => handleNavClick(e, item)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="NavContact">
-              <a href="#HomeContact">
-              <p>Let's Talk</p>
-              <VscMenu onClick={() => setSidenavOpen(true)} />
+              <a href="#HomeContact" onClick={(e) => handleNavClick(e, {name: 'Contact', isHash: true, targetId: '#HomeContact'})}>
+                <p>Let's Talk</p>
+                 <VscMenu onClick={() => setSidenavOpen(true)} />
               </a>
             </div>
           </div>
@@ -81,4 +174,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

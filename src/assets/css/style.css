@@ -187,7 +187,7 @@
 #Sidenav .SidenavContent ul {
   list-style: none;
   padding: 0;
-  margin: 80px 0 0 0;
+  margin: 35px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -1751,6 +1751,37 @@
   transform: scale(1.05);
   background: rgba(5, 221, 255, 0.05);
 }
+#HomeBlog .NoDataContainer {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#HomeBlog .NoDataContainer .NoDataContent {
+  max-width: 450px;
+}
+#HomeBlog .NoDataContainer .NoDataContent .NoDataImg {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+#HomeBlog .NoDataContainer .NoDataContent h3 {
+  font-size: 28px;
+  font-family: myFont1;
+  margin-bottom: 15px;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#HomeBlog .NoDataContainer .NoDataContent p {
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.6;
+  line-height: 1.5;
+}
 
 #BlogList {
   width: 100%;
@@ -1832,6 +1863,37 @@
 #BlogList .BlogListMain .LoadMoreSection .load-more-btn:hover {
   background: rgba(5, 221, 255, 0.1);
   transform: translateY(-3px);
+}
+#BlogList .BlogListMain .NoDataContainer {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#BlogList .BlogListMain .NoDataContainer .NoDataContent {
+  max-width: 450px;
+}
+#BlogList .BlogListMain .NoDataContainer .NoDataContent .NoDataImg {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+#BlogList .BlogListMain .NoDataContainer .NoDataContent h3 {
+  font-size: 28px;
+  font-family: myFont1;
+  margin-bottom: 15px;
+  background: linear-gradient(180deg, #05ddff, #00bdfa, #003ffa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#BlogList .BlogListMain .NoDataContainer .NoDataContent p {
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.6;
+  line-height: 1.5;
 }
 
 #BlogDetails {

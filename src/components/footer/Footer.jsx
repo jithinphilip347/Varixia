@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { gsap } from "gsap";
 import FooterLogo from "../../../public/images/footer-logo.png";
+import Link from "next/link";
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -80,7 +81,9 @@ const Footer = () => {
 
           <div className="FooterSection2">
             <div className="FooterLogo">
-              <Image src='/images/footer-logo.png' alt="Varixia Logo" width={100} height={100} placeholder="empty"/>
+                 <Link href="/">
+                   <Image src='/images/footer-logo.png' alt="Varixia Logo" width={100} height={100} placeholder="empty"/>
+              </Link>
             </div>
             <div className="FooterSocialIcon">
               <a
