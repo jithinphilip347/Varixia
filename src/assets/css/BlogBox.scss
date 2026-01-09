@@ -88,6 +88,7 @@ $text-muted: #b3b3b3;
       display: inline-block;
       width: fit-content;
       transition: 0.3s;
+      cursor: pointer;
 
       // Button Gradient Border
       &::after {

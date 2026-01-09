@@ -80,6 +80,7 @@
   width: -moz-fit-content;
   width: fit-content;
   transition: 0.3s;
+  cursor: pointer;
 }
 .blog-card .content-section .read-blog-btn::after {
   content: "";
