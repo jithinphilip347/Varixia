@@ -1767,6 +1767,7 @@
   max-width: 250px;
   margin-bottom: 25px;
   opacity: 0.8;
+  height: 250px;
 }
 #HomeBlog .NoDataContainer .NoDataContent h3 {
   font-size: 28px;

@@ -5,14 +5,11 @@ const blogApi = () => {
 
     const getBlogs = async () => {
 
-        // console.log(API_BASE_URL + "/blogs");
         const response = await fetch(API_BASE_URL + "/blogs",{
             next:{
                 revalidate:60
             }
         });
-
-
         const data = await response.json();
         
         return data;

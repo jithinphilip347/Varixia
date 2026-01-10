@@ -11,8 +11,10 @@ import Link from 'next/link';
 import { MEDIA_BASE_URL } from '@/utils/constants';
 // import { Link } from 'react-router-dom';
 import NoData from '../../../public/images/no-data.jpg'
+import Image from 'next/image';
+
+
 const HomeBlog = ({ blogs }) => {
-  
 
   return (
   <div id='HomeBlog' style={{ backgroundColor: '#000' }}>
@@ -84,7 +86,7 @@ const HomeBlog = ({ blogs }) => {
 ) : (
   <div className="NoDataContainer">
     <div className="NoDataContent">
-      <img src={NoData} alt="No Blogs Found" className="NoDataImg" />
+      <Image src={NoData} alt="No Blogs Found" className="NoDataImg" />
       <h3>No Blogs Found</h3>
       <p>We haven't posted any stories yet. Please check back later for updates!</p>
     </div>
